@@ -50,15 +50,3 @@ render_move <- function(qmd_file,
   #render + move
   walk(files_input, render_move)
     
-
-
-# MOVE IMAGES TO BLOG -----------------------------------------------------
-
-  #create directory if it doens't already exist
-  img_dir_out <- dir_create("../usaid-oha-si.github.io/assets/img/manuals/")      
-  
-  #identify images to move
-  files_img <- list.files("images", full.names = TRUE)
-  
-  #move files
-  walk(files_img, ~file_copy(.x, img_dir_out))
