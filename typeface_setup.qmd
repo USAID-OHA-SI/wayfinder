@@ -7,11 +7,11 @@ format: html
 
 To create standard visualizations across our SI team, we rely on one of USAID's alternate fonts, [Sans Source Pro](https://fonts.google.com/specimen/Source+Sans+Pro). This typeface is not only not native to R, nor is it a standard to Windows, but is an open source typeface available from Google Fonts.
 
-![](images/usaid-style_font.png){fig-alt="Snapshot from USAID's Graphic Standards and Partner Co-Branding Guide showing the web typeface as Source Sans Pro Light"}
+![](images/typeface_setup-usaid-style_font.png){fig-alt="Snapshot from USAID's Graphic Standards and Partner Co-Branding Guide showing the web typeface as Source Sans Pro Light"}
 
 To install the font on your GFE, you can find it in Software Center (Start \> Microsoft Endpoint manager \> Software Center). Once there, you can select the Application called "Source Sans Pro" and click "Install".
 
-![](images/software-center_font.png){fig-alt="Software Center window with Source Sans Pro highlighted"}
+![](images/typeface_setup-software-center_font.png){fig-alt="Software Center window with Source Sans Pro highlighted"}
 
 To install it on your computer, navigate to the typeface on [Google Fonts](https://fonts.google.com/specimen/Source+Sans+Pro) and click the "Download family". After the folder finishes downloading, unzip it.
 
@@ -38,7 +38,7 @@ library(extrafont)
 fonts()
 ```
 
-![](images/typeface_installed.png){fig-alt="Output in R Console showing Source Sans Pro family installed"}
+![](images/typeface_setup-typeface_installed.png){fig-alt="Output in R Console showing Source Sans Pro family installed"}
 
 #### Additional Resources
 
