@@ -1,0 +1,58 @@
+---
+title: "Installing our base set of packages"
+format: html
+---
+
+Whereas programs like Stata, SPSS, etc come with a full suite of built in functions, R is an open source tool with contributions from users all over the globe. There are some built in functions that come preloaded with R, but for the most part, you will rely on package from other contributors. There are tons and tons of packages available on CRAN and even more hosted elsewhere, like on GitHub. It can be a bit intimidating to figure out what packages to install from the start, so we will suggest a handful that we use all the time.
+
+*Tidyverse Packages*
+  - **`dplyr`**: A fast, consistent tool for working with data frame like objects, both in memory and out of memory
+  - **`tidyr` **:  Tools to help to create tidy data, where each column is a variable, each row is an observation, and each cell contains a single value. 'tidyr' contains tools for changing the shape (pivoting) and hierarchy (nesting and 'unnesting') of a dataset, turning deeply nested lists into rectangular data frames ('rectangling'), and extracting values out of string columns. It also includes tools for working with missing values (both implicit and explicit).
+  - **`ggplot2**`: A system for 'declaratively' creating graphics, based on The Grammar of Graphics\". You provide the data, tell 'ggplot2' how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.
+  - **`readr`**: The goal of 'readr' is to provide a fast and friendly way to read rectangular data (like 'csv', 'tsv', and 'fwf'). It is designed to flexibly parse many types of data found in the wild, while still cleanly failing when data unexpectedly changes
+  -** `readxl`**:  Import excel files into R. Supports '.xls' via the embedded ['libxls' C library)[https://github.com/libxls/libxls] and '.xlsx' via the embedded ['RapidXML' C++ library](https://rapidxml.sourceforge.net/). 
+  - **`forcats`**: Helpers for reordering factor levels (including moving specified levels to front, ordering by first appearance, reversing, and randomly shuffling), and tools for modifying factor levels (including collapsing rare levels into other, 'anonymising', and manually 'recoding').
+  - **`stringr`**: A consistent, simple and easy to use set of wrappers around the fantastic 'stringi' package. All function and argument names (and positions) are consistent, all functions deal with NA's and zero length vectors in the same way, and the output from one function is easy to feed into the input of another.
+  - **`lubridate`**: Functions to work with date-times and time-spans: fast and user friendly parsing of date-time data, extraction and updating of components of a date-time (years, months, days, hours, minutes, and seconds), algebraic manipulation on date-time and time-span objects.
+  - **`reprex`**:  Convenience wrapper that uses the 'rmarkdown' package to render small snippets of code to target formats that include both code and output.
+  - **`tidyverse`**: The 'tidyverse' is a set of packages that work in harmony because they share common data representations and 'API' design. This package is designed to make it easy to install and load multiple 'tidyverse' packages in a single step. 
+  - **`googledrive`**: Manage Google Drive files from R.
+  - **`glue`**: An implementation of interpreted string literals, inspired by [Python's Literal String Interpolation](https://www.python.org/dev/peps/pep-0498/) and [Docstrings](https://www.python.org/dev/peps/pep-0257/) and [Julia's Triple-Quoted String Literals](https://docs.julialang.org/en/v1.3/manual/strings/#Triple-Quoted-String-Literals-1) 
+
+*Other Packages*
+  - **’remotes’**: Download and install R packages stored in 'GitHub', 'GitLab', 'Bitbucket', 'Bioconductor', or plain 'subversion' or 'git' repositories. 
+  - **`scales`**:  Graphical scales map data to aesthetics, and provide methods for automatically determining breaks and labels for axes and legends.
+  - **`extrafont`**: Tools to using fonts other than the standard PostScript fonts. This package makes it easy to use system TrueType fonts and with PDF or PostScript output files, and with bitmap output files in Windows. 
+  - **`patchwork`**: The 'ggplot2' package provides a strong API for sequentially building up a plot, but does not concern itself with composition of multiple plots. 'patchwork' is a package that expands the API to allow for arbitrarily complex composition of plots by, among others, providing mathematical operators for combining multiple plots. 
+  - **`datapasta`**: RStudio addins and R functions that make copy-pasting vectors and tables to text painless.
+  - **`quickview`**: RStudio addin to quickly inspect data in a View tab or open them with default CSV/text editor softwares.
+
+*OHA/SI Packages*
+  - **`glitr`**: Helps create and export ggplot2 charts in the style used by the GH OHA SI team. Includes multiple styles and themes to tweak plots to user needs. Sample testing data also available.
+  - **`glamr`**: Provides a series of base functions useful to the GH OHA SI team. This includes project setup, pulling from DATIM, and key functions for working with the MSD.
+  - **`gisr`**: R Spatial functions for HIV/AIDS related Geospatial Analytics
+  - **`gagglr`**: Since package are developed with a regular update cycle, users can often be using outdated packages that resolve bug or add new features. This checks to ensure you are using the lastest version of the OHA core package and  allows you to load them all at the start of a session. This package borrows heavily from the tidyverse package.
+  - **`tameDP`**: Import PSNUxIM targets and PLHIV data from COP Data Pack. The   purpose is to make the data tidy and more usable than their current structure in the Excel data packs.
+
+
+Whenever you are installing packages, you should start from a clean instance of R and not load any packages until you are finished installing what you want. Most packages are found on CRAN and require a simpler means of installation; others found on GitHub and elsewhere require a different function to install, specifying the source and repository.
+
+```
+#tidyverse packages (all)
+install.packages("tidyverse")
+
+#other packages
+install.packages("remotes")
+install.packages("scales")
+install.packages("extrafont")
+install.packages("patchwork")
+remotes::install_github("MilesMcBain/datapasta")
+remotes::install_github("fkeck/quickview")
+
+#USAID-OHA-SI packages
+remotes::install_github("USAID-OHA-SI/glitr")
+remotes::install_github("USAID-OHA-SI/glamr")
+remotes::install_github("USAID-OHA-SI/gisr")
+remotes::install_github("USAID-OHA-SI/gagglr")
+remotes::install_github("USAID-OHA-SI/tameDP")
+```

@@ -1,0 +1,16 @@
+---
+title: "Background"
+format: html
+---
+
+#### Purpose 
+Maintain a standard, living reference guide to establish standard workflows and for onboard analysts on how to access the great work that exists and be a contributor as well. See OHA R Analyst Manual - Purpose/Outline for more details. This guide is not intended to teach you R, but rather how to orient you to how we have set up and use R workflows. If you are looking for a getting started with R guide, we developed a [“R Building Blocks Series”](https://usaid-oha-si.github.io/learn/categories/#rbbs) in 2022 based on [R for Data Science](https://r4ds.had.co.nz/). 
+
+#### Who is the audience?
+This guide is designed to assist OHA analysts who want to incorporate R + RStudio and Git + GitHub into their analytical workflows. While the primary target audience is new Strategic Information Analysts, the concepts covered in this guide can be readily applied to workflows across various areas within OHA. 
+
+#### How to use
+This guide is setup to help users setup their R environments on their local machines
+
+#### How to contribute
+TO DO
