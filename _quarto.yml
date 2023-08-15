@@ -1,0 +1,34 @@
+project:
+  type: book
+
+book:
+  title: "R guide for Strategic Information Advisors"
+  author: "Lemlem Baraki, Aaron Chafetz, Tim Essam, Baboyma Kagniniwa, Karishma Srikanth"
+  date: "8/01/2023"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - background.qmd
+    - r_setup.qmd
+    - typeface_setup.qmd
+    - git_setup.qmd
+    - r_project_setup.qmd
+    - base_packages.qmd
+    - access_store_data.qmd
+    - creds_mgmt.qmd
+    - summary.qmd
+    - references.qmd
+  page-navigation: true
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+  epub: 
+    cover-image: cover.png
+
+editor: visual
+

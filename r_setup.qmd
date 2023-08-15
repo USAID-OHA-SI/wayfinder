@@ -3,7 +3,7 @@ title: "Installing R, RStudio, RTools"
 format: html
 ---
 
-#### Installing R and RStudio
+## Installing R and RStudio
 
 Working from your USAID laptop, Government Furnished Equipment (GFE), you can install R and RStudio without having to submit a ticket to the M/CIO Help Desk.
 R is the open-source statistics package that we use for our work and is the engine that powers RStudio Desktop, the user interface or integrated development environment (IDE).
@@ -19,13 +19,13 @@ If working on a personal machine, you can install R from [CRAN](https://cran.r-p
 Select "Download R for Windows" and then "base" and follow the instructions for installing that pop up when you launch the .exe file from your downloads.
 RStudio Desktop can be installed [Posit's website](https://posit.co/download/rstudio-desktop/) by selecting "Download RStudio Desktop for Windows" and then following the setup instructions.
 
-#### Installing Rtools
+## Installing Rtools
 
 If you are working on a GFE, you will need to submit a ticket to [M/CIO Help Desk](CIO-HELPDESK@usaid.gov) to install Rtools on your machine.
 If you are installing from your personal machine, you will need to [download](https://cran.r-project.org/bin/windows/Rtools/) and install the version of Rtools based on the R version you are using.
 You can determine what version of R you are using by opening up a new instance of R or RStudio and the version will be the very first thing that appears in your console.
 
-#### RStudio Global Options
+## RStudio Global Options
 
 It's best practice to start with a clean session each time you load up RStudio, so you will want to adjust some default options in your IDE.
 To access these, in the menu bar at the top, navigate to Tools \> Global Options.
@@ -38,7 +38,7 @@ Here are the places you will want to make changes to the default options before 
 
 ![](images/r_setup-global-options.png){fig-alt="RStudio Global Options menu with the items above changed"}
 
-#### Storing Snippets
+## Storing Snippets
 
 Rstudio code snippets are predefined code shortcuts that can be used to quickly insert commonly used code blocks.
 The use of snippets can improve coding efficiency, reduce the time spent copying and pasting code from other scripts, and improve the readability of your code by providing a standardized format for your analytical scripts.
@@ -71,7 +71,7 @@ If we hit Tab, the `Sys.time()` function will be inserted in the console window.
 When we hit enter, Rstudio will report the current time.
 While this may not be that useful, you can imagine how useful this may be if you need to insert the date or a repeated chunk of code.
 
-#### Types of snippets
+## Types of snippets
 
 There are broadly four different types of snippets available for use or creation.
 
@@ -85,7 +85,7 @@ We highly encourage you to take advantage of snippets and share your discoveries
 
 [Link to SI Snippets](https://gist.github.com/tessam30/fc775a2f917ea5d62de0f6724c4aeada)
 
-#### Additional Resources
+## Additional Resources
 
   - [Installing Rtools - Jeffrey Leek](http://jtleek.com/modules/01_DataScientistToolbox/02_10_rtools/#1)
   - [RBBS - 0 Software and Account Setup: Setting up Rtools - Aaron Chafetz](https://usaid-oha-si.github.io/corps/rbbs/2022/01/28/rbbs-0-setup.html)

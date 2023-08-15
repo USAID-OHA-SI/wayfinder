@@ -1,0 +1,28 @@
+---
+title: "Setting up a project"
+---
+
+An R project is a directory that contains all the contents, scripts, and resources that are related to a specific project. R projects enable us to group our work into self-contained folders, which is particularly useful if we have context-specific analyses that we wish to keep distinct.
+
+The most beneficial aspect of creating an R Project is that the working directory is the project's roots folder - this allows us to keep track of all the files that are pertinent to a specific project and easily read files from the working directory. It also allows us the ability to preserve our workspace between sessions.
+
+When a project is created, RStudio will create a new R session for the project. It will allow create the following files:
+
+-   An **.Rproj** file in the project's main directory, which contains the same working directory, R session, and command history. Previous edited documents and files are restored in editor tabs, as well.
+-   An **.Rhistory** file in the project's main directory, which contains the command history from your session that is loaded into the R Project
+-   An **.Rdata** file in the project's main directory, which contains the data and changes from your sessions to be loaded in the R Project
+
+## Creating a new R Project in RStudio
+
+1.  Open RStudio and go to the File menu and select `New Project`.
+
+2.  In the `New Project` window, choose `New Directory`. Then, choose `New Project`. Name your new directory and then "Create the project as subdirectory of" and select a folder on your computer (preferably your folder where you will store all of your R Projects). Click on Create Project.
+
+3.  After your project is completed, if the project does not automatically open in RStudio, then go to the File menu, select Open Project, and choose the file with the extension `.Rproj`.
+
+4.  When RStudio opens, you will see three panels in the window.  Verify your working directory now that we have our Project set up using `getwd()`.
+
+**Note**: If your RStudio is already opened from an existing project, you may want to check the `Open in a new session` checkbox to open the project in a new session.
+
+
+
