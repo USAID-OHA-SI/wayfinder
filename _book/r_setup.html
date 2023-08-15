@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R guide for Strategic Information Advisors - 3&nbsp; Installing R, RStudio, RTools</title>
+<title>R guide for Strategic Information Advisors - 4&nbsp; Installing R, RStudio, RTools</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing R, RStudio, RTools</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing R, RStudio, RTools</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -105,37 +105,47 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></a>
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_setup.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing R, RStudio, RTools</span></a>
+  <a href="./background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Background</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./typeface_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing Source Sans Pro Typeface</span></a>
+  <a href="./r_setup.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing R, RStudio, RTools</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./git_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installing git and/or a git client</span></a>
+  <a href="./typeface_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installing Source Sans Pro Typeface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_project_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Setting up a project</span></a>
+  <a href="./git_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing git &amp; git client</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./base_packages.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Installing our base set of packages</span></a>
+  <a href="./r_project_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Setting up a project</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./base_packages.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing our base set of packages</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./access_store_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Storing and accessing PEPFAR data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./creds_mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Credential management</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -152,12 +162,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link active" data-scroll-target="#installing-r-and-rstudio"><span class="toc-section-number">3.1</span>  Installing R and RStudio</a></li>
-  <li><a href="#installing-rtools" id="toc-installing-rtools" class="nav-link" data-scroll-target="#installing-rtools"><span class="toc-section-number">3.2</span>  Installing Rtools</a></li>
-  <li><a href="#rstudio-global-options" id="toc-rstudio-global-options" class="nav-link" data-scroll-target="#rstudio-global-options"><span class="toc-section-number">3.3</span>  RStudio Global Options</a></li>
-  <li><a href="#storing-snippets" id="toc-storing-snippets" class="nav-link" data-scroll-target="#storing-snippets"><span class="toc-section-number">3.4</span>  Storing Snippets</a></li>
-  <li><a href="#types-of-snippets" id="toc-types-of-snippets" class="nav-link" data-scroll-target="#types-of-snippets"><span class="toc-section-number">3.5</span>  Types of snippets</a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="toc-section-number">3.6</span>  Additional Resources</a></li>
+  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link active" data-scroll-target="#installing-r-and-rstudio"><span class="toc-section-number">4.1</span>  Installing R and RStudio</a></li>
+  <li><a href="#installing-rtools" id="toc-installing-rtools" class="nav-link" data-scroll-target="#installing-rtools"><span class="toc-section-number">4.2</span>  Installing Rtools</a></li>
+  <li><a href="#rstudio-global-options" id="toc-rstudio-global-options" class="nav-link" data-scroll-target="#rstudio-global-options"><span class="toc-section-number">4.3</span>  RStudio Global Options</a></li>
+  <li><a href="#storing-snippets" id="toc-storing-snippets" class="nav-link" data-scroll-target="#storing-snippets"><span class="toc-section-number">4.4</span>  Storing Snippets</a></li>
+  <li><a href="#types-of-snippets" id="toc-types-of-snippets" class="nav-link" data-scroll-target="#types-of-snippets"><span class="toc-section-number">4.5</span>  Types of snippets</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="toc-section-number">4.6</span>  Additional Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -166,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing R, RStudio, RTools</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing R, RStudio, RTools</span></h1>
 </div>
 
 
@@ -181,19 +191,19 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="installing-r-and-rstudio" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="installing-r-and-rstudio"><span class="header-section-number">3.1</span> Installing R and RStudio</h2>
+<section id="installing-r-and-rstudio" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="installing-r-and-rstudio"><span class="header-section-number">4.1</span> Installing R and RStudio</h2>
 <p>Working from your USAID laptop, Government Furnished Equipment (GFE), you can install R and RStudio without having to submit a ticket to the M/CIO Help Desk. R is the open-source statistics package that we use for our work and is the engine that powers RStudio Desktop, the user interface or integrated development environment (IDE). RStudio Desktop or another IDE such as Visual Studio Code is not required to use R, but will vastly improve your experience.</p>
 <p>To install both R and RStudio Desktop on your GFE, go to Software Center on your computer (Start &gt; Microsoft Endpoint manager &gt; Software Center) Once there, you can select the Application called “R for Windows” and click “Install”. After that completes, you can then select “RStudio Desktop” and then “Install”. If you run into any issues, first try restarting your machine and if that fails, you can contact <a href="CIO-HELPDESK@usaid.gov">M/CIO Help Desk</a>.</p>
 <p><img src="images/r_setup-software-center_r.png" class="img-fluid" alt="Software Center window with R and RStudio highlighted"></p>
 <p>If working on a personal machine, you can install R from <a href="https://cran.r-project.org/">CRAN</a>. Select “Download R for Windows” and then “base” and follow the instructions for installing that pop up when you launch the .exe file from your downloads. RStudio Desktop can be installed <a href="https://posit.co/download/rstudio-desktop/">Posit’s website</a> by selecting “Download RStudio Desktop for Windows” and then following the setup instructions.</p>
 </section>
-<section id="installing-rtools" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="installing-rtools"><span class="header-section-number">3.2</span> Installing Rtools</h2>
+<section id="installing-rtools" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="installing-rtools"><span class="header-section-number">4.2</span> Installing Rtools</h2>
 <p>If you are working on a GFE, you will need to submit a ticket to <a href="CIO-HELPDESK@usaid.gov">M/CIO Help Desk</a> to install Rtools on your machine. If you are installing from your personal machine, you will need to <a href="https://cran.r-project.org/bin/windows/Rtools/">download</a> and install the version of Rtools based on the R version you are using. You can determine what version of R you are using by opening up a new instance of R or RStudio and the version will be the very first thing that appears in your console.</p>
 </section>
-<section id="rstudio-global-options" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="rstudio-global-options"><span class="header-section-number">3.3</span> RStudio Global Options</h2>
+<section id="rstudio-global-options" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="rstudio-global-options"><span class="header-section-number">4.3</span> RStudio Global Options</h2>
 <p>It’s best practice to start with a clean session each time you load up RStudio, so you will want to adjust some default options in your IDE. To access these, in the menu bar at the top, navigate to Tools &gt; Global Options. Here are the places you will want to make changes to the default options before you hit “Apply”:</p>
 <ul>
 <li>Uncheck “Result most recent opened project at startup”</li>
@@ -203,8 +213,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><img src="images/r_setup-global-options.png" class="img-fluid" alt="RStudio Global Options menu with the items above changed"></p>
 </section>
-<section id="storing-snippets" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="storing-snippets"><span class="header-section-number">3.4</span> Storing Snippets</h2>
+<section id="storing-snippets" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="storing-snippets"><span class="header-section-number">4.4</span> Storing Snippets</h2>
 <p>Rstudio code snippets are predefined code shortcuts that can be used to quickly insert commonly used code blocks. The use of snippets can improve coding efficiency, reduce the time spent copying and pasting code from other scripts, and improve the readability of your code by providing a standardized format for your analytical scripts.</p>
 <p>To create your own snippets in Rstudio, go to “Tools &gt; Global Options &gt; Code &gt; Edit Snippets. This will open a file where you can define your custom snippets using a simple syntax.</p>
 <p><img src="images/r_setup-snippets_global-options.png" class="img-fluid" alt="RStudio Global Options highlighting where to access Snippets"></p>
@@ -218,8 +228,8 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/r_setup-snippet_insert.png" class="img-fluid" alt="RStudio Console window showing autofill of Snippet name"></p>
 <p>If we hit Tab, the <code>Sys.time()</code> function will be inserted in the console window. When we hit enter, Rstudio will report the current time. While this may not be that useful, you can imagine how useful this may be if you need to insert the date or a repeated chunk of code.</p>
 </section>
-<section id="types-of-snippets" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="types-of-snippets"><span class="header-section-number">3.5</span> Types of snippets</h2>
+<section id="types-of-snippets" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="types-of-snippets"><span class="header-section-number">4.5</span> Types of snippets</h2>
 <p>There are broadly four different types of snippets available for use or creation.</p>
 <ol type="1">
 <li>Predefined snippets: RStudio comes with several built-in snippets for common programming tasks. These snippets cover a wide range of R code structures and functions, such as for loops, if statements, function definitions, and more.</li>
@@ -230,8 +240,8 @@ ul.task-list li input[type="checkbox"] {
 <p>By using RStudio snippets, you can streamline your coding workflow, reduce repetitive typing, and improve overall productivity when working with R code. We highly encourage you to take advantage of snippets and share your discoveries with the team.</p>
 <p><a href="https://gist.github.com/tessam30/fc775a2f917ea5d62de0f6724c4aeada">Link to SI Snippets</a></p>
 </section>
-<section id="additional-resources" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">3.6</span> Additional Resources</h2>
+<section id="additional-resources" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">4.6</span> Additional Resources</h2>
 <ul>
 <li><a href="http://jtleek.com/modules/01_DataScientistToolbox/02_10_rtools/#1">Installing Rtools - Jeffrey Leek</a></li>
 <li><a href="https://usaid-oha-si.github.io/corps/rbbs/2022/01/28/rbbs-0-setup.html">RBBS - 0 Software and Account Setup: Setting up Rtools - Aaron Chafetz</a></li>
@@ -377,12 +387,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./background.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Background</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./typeface_setup.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing Source Sans Pro Typeface</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installing Source Sans Pro Typeface</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

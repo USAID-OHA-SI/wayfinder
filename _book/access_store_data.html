@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R guide for Strategic Information Advisors - 8&nbsp; Storing and accessing PEPFAR data</title>
+<title>R guide for Strategic Information Advisors - 9&nbsp; Storing and accessing PEPFAR data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,7 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Storing and accessing PEPFAR data</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Storing and accessing PEPFAR data</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -168,47 +168,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></a>
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing R, RStudio, RTools</span></a>
+  <a href="./background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Background</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./typeface_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing Source Sans Pro Typeface</span></a>
+  <a href="./r_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing R, RStudio, RTools</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./git_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installing git &amp; git client</span></a>
+  <a href="./typeface_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installing Source Sans Pro Typeface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_project_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Setting up a project</span></a>
+  <a href="./git_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing git &amp; git client</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./base_packages.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Installing our base set of packages</span></a>
+  <a href="./r_project_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Setting up a project</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./access_store_data.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Storing and accessing PEPFAR data</span></a>
+  <a href="./base_packages.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing our base set of packages</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./creds_mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Credential management</span></a>
+  <a href="./access_store_data.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Storing and accessing PEPFAR data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./creds_mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Credential management</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -225,9 +225,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#storing-pepfar-data" id="toc-storing-pepfar-data" class="nav-link active" data-scroll-target="#storing-pepfar-data"><span class="toc-section-number">8.1</span>  Storing PEPFAR Data</a></li>
-  <li><a href="#accessing-pepfar-data" id="toc-accessing-pepfar-data" class="nav-link" data-scroll-target="#accessing-pepfar-data"><span class="toc-section-number">8.2</span>  Accessing PEPFAR Data</a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="toc-section-number">8.3</span>  Additional Resources</a></li>
+  <li><a href="#storing-pepfar-data" id="toc-storing-pepfar-data" class="nav-link active" data-scroll-target="#storing-pepfar-data"><span class="toc-section-number">9.1</span>  Storing PEPFAR Data</a></li>
+  <li><a href="#accessing-pepfar-data" id="toc-accessing-pepfar-data" class="nav-link" data-scroll-target="#accessing-pepfar-data"><span class="toc-section-number">9.2</span>  Accessing PEPFAR Data</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="toc-section-number">9.3</span>  Additional Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -236,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Storing and accessing PEPFAR data</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Storing and accessing PEPFAR data</span></h1>
 </div>
 
 
@@ -251,15 +251,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="storing-pepfar-data" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="storing-pepfar-data"><span class="header-section-number">8.1</span> Storing PEPFAR Data</h2>
+<section id="storing-pepfar-data" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="storing-pepfar-data"><span class="header-section-number">9.1</span> Storing PEPFAR Data</h2>
 <p>When working on any given project, the general advice is typically to store your data in that specific project ’s repository. This advice is a good best practice, but does not translate well in the PEPFAR space for two main reasons: file size and sensitivity. Instead, we recommend storing PEPFAR structured datasets in a centralized location on your machine outside of the project, e.g.&nbsp;<code>C:\Users\spower\Documents\Data</code>.</p>
 <p>Our work primarily revolves around using PEPFAR structured datasets, which are large, cumbersome SQLview output files, e.g.&nbsp;OUxIM, PSNU, PSNUxIM, NAT_SUBNAT, and FSD. Given this fact, it makes more sense for us to store these dataset in a central location on our machines rather than duplicating these files in each project. These PEPFAR structured datasets are easily accessible for anyone working in PEPFAR, either from <a href="https://pepfar-panorama.org/">PEPFAR Panorama</a> or through the <a href="https://www.datim.org/">DATIM Genie</a>.</p>
 <p>The second reason for storing these datasets outside of the project is to avoid any risk of posting these non-public data to a public space when using version control. While these structured dataset are aggregated and not individual patient level data, they are not published by PEPFAR to the public and may contain sensitivities when it comes to key populations or when using data at the facility level.</p>
 <p>For small (and non-PEPFAR structured) datasets, we recommend storing these data within the project either in the <code>Data</code> and <code>Data_public</code> folder. Another alternative is storing the data on Google Drive in a shared folder and pulling the data down utilizing the Google API via the <code>googledrive</code> or <code>googlesheets4</code> packages.</p>
 </section>
-<section id="accessing-pepfar-data" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="accessing-pepfar-data"><span class="header-section-number">8.2</span> Accessing PEPFAR Data</h2>
+<section id="accessing-pepfar-data" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="accessing-pepfar-data"><span class="header-section-number">9.2</span> Accessing PEPFAR Data</h2>
 <p>PEPFAR maintains a number of different structured datasets across MER, EA, Budget, and SIMS. Data are entered into DATIM, the system of record, by partners and goes through an approval process that takes about six weeks after the quarter ends. In-process data can be accessed through DATIM and the <a href="https://www.datim.org/">DATIM Genie</a>, which will export data in the typical structured manner. Otherwise, datasets are made available on <a href="https://pepfar-panorama.org/">PEPFAR Panorama</a> for download. PEPFAR data can also be pulled directly from DATIM utilizing an API (see the <a href="https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/introduction.html">DHIS2 API documentation</a> or our <a href="https://usaid-oha-si.github.io/grabr/"><code>grabr</code> package</a></p>
 <p>As mentioned in the last section, we recommend storing these datasets in a central location on your computer. This creates a problem from a collaboration standpoint, as we can’t just point to the “Data” folders in our project using a relative path; we have to provide a file path that only works on one user’s machine and not another. To solve this dilemma, we use a function in the <a href="https://usaid-oha-si.github.io/glamr"><code>glamr</code> package</a> called <code>si_paths()</code> which access the paths we have stored locally to where our PEPFAR structured datasets reside. This way, when you pick up a coworker’s code, you don’t have to change any of the file paths, it just works.</p>
 <p>Those local paths need to be set once and stored in your <code>.Rprofile</code>. To do so, you will run <code>glamr::set_paths()</code> to store all the relevant paths (you can ignore any that aren’t relevant to you). The below example would be the code I would run in the console indicating where my folders are for the MSD, DATIM files and Downloads.</p>
@@ -270,8 +270,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">folderpath_downloads =</span>  <span class="st">"~/Downloads"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="additional-resources" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">8.3</span> Additional Resources</h2>
+<section id="additional-resources" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">9.3</span> Additional Resources</h2>
 <ul>
 <li><a href="https://usaid-oha-si.github.io/glamr/articles/project-workflow.html">Project Workflow Vignette</a></li>
 <li><a href="https://usaid-oha-si.github.io/glamr/">glamr package</a></li>
@@ -419,12 +419,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./base_packages.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Installing our base set of packages</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing our base set of packages</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./creds_mgmt.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Credential management</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Credential management</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

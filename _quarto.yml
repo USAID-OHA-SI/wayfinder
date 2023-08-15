@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - summary.qmd
     - background.qmd
     - r_setup.qmd
     - typeface_setup.qmd
@@ -16,7 +17,6 @@ book:
     - base_packages.qmd
     - access_store_data.qmd
     - creds_mgmt.qmd
-    - summary.qmd
     - references.qmd
   page-navigation: true
 

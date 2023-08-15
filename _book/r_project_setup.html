@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R guide for Strategic Information Advisors - 6&nbsp; Setting up a project</title>
+<title>R guide for Strategic Information Advisors - 7&nbsp; Setting up a project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Setting up a project</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Setting up a project</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -105,37 +105,47 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></a>
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing R, RStudio, RTools</span></a>
+  <a href="./background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Background</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./typeface_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing Source Sans Pro Typeface</span></a>
+  <a href="./r_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing R, RStudio, RTools</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./git_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installing git and/or a git client</span></a>
+  <a href="./typeface_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installing Source Sans Pro Typeface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_project_setup.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Setting up a project</span></a>
+  <a href="./git_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing git &amp; git client</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./base_packages.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Installing our base set of packages</span></a>
+  <a href="./r_project_setup.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Setting up a project</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./base_packages.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing our base set of packages</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./access_store_data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Storing and accessing PEPFAR data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./creds_mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Credential management</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -152,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#creating-a-new-r-project-in-rstudio" id="toc-creating-a-new-r-project-in-rstudio" class="nav-link active" data-scroll-target="#creating-a-new-r-project-in-rstudio"><span class="toc-section-number">6.1</span>  Creating a new R Project in RStudio</a></li>
+  <li><a href="#creating-a-new-r-project-in-rstudio" id="toc-creating-a-new-r-project-in-rstudio" class="nav-link active" data-scroll-target="#creating-a-new-r-project-in-rstudio"><span class="toc-section-number">7.1</span>  Creating a new R Project in RStudio</a></li>
   </ul>
 </nav>
     </div>
@@ -161,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Setting up a project</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Setting up a project</span></h1>
 </div>
 
 
@@ -184,8 +194,8 @@ ul.task-list li input[type="checkbox"] {
 <li>An <strong>.Rhistory</strong> file in the project’s main directory, which contains the command history from your session that is loaded into the R Project</li>
 <li>An <strong>.Rdata</strong> file in the project’s main directory, which contains the data and changes from your sessions to be loaded in the R Project</li>
 </ul>
-<section id="creating-a-new-r-project-in-rstudio" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="creating-a-new-r-project-in-rstudio"><span class="header-section-number">6.1</span> Creating a new R Project in RStudio</h2>
+<section id="creating-a-new-r-project-in-rstudio" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="creating-a-new-r-project-in-rstudio"><span class="header-section-number">7.1</span> Creating a new R Project in RStudio</h2>
 <ol type="1">
 <li><p>Open RStudio and go to the File menu and select <code>New Project</code>.</p></li>
 <li><p>In the <code>New Project</code> window, choose <code>New Directory</code>. Then, choose <code>New Project</code>. Name your new directory and then “Create the project as subdirectory of” and select a folder on your computer (preferably your folder where you will store all of your R Projects). Click on Create Project.</p></li>
@@ -334,12 +344,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./git_setup.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installing git and/or a git client</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing git &amp; git client</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./base_packages.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Installing our base set of packages</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing our base set of packages</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
