@@ -5,7 +5,7 @@ format: html
 
 Whereas programs like Stata, SPSS, etc come with a full suite of built in functions, R is an open source tool with contributions from users all over the globe. There are some built in functions that come preloaded with R, but for the most part, you will rely on package from other contributors. There are tons and tons of packages available on CRAN and even more hosted elsewhere, like on GitHub. It can be a bit intimidating to figure out what packages to install from the start, so we will suggest a handful that we use all the time.
 
-*Tidyverse Packages*
+## *Tidyverse Packages*
 
 -   **`dplyr`**: A fast, consistent tool for working with data frame like objects, both in memory and out of memory
 -   **`tidyr`** : Tools to help to create tidy data, where each column is a variable, each row is an observation, and each cell contains a single value. 'tidyr' contains tools for changing the shape (pivoting) and hierarchy (nesting and 'unnesting') of a dataset, turning deeply nested lists into rectangular data frames ('rectangling'), and extracting values out of string columns. It also includes tools for working with missing values (both implicit and explicit).
@@ -20,7 +20,7 @@ Whereas programs like Stata, SPSS, etc come with a full suite of built in functi
 -   **`googledrive`**: Manage Google Drive files from R.
 -   **`glue`**: An implementation of interpreted string literals, inspired by [Python's Literal String Interpolation](https://www.python.org/dev/peps/pep-0498/) and [Docstrings](https://www.python.org/dev/peps/pep-0257/) and [Julia's Triple-Quoted String Literals](https://docs.julialang.org/en/v1.3/manual/strings/#Triple-Quoted-String-Literals-1)
 
-*Other Packages*
+## *Other Packages*
 
 -   **'remotes'**: Download and install R packages stored in 'GitHub', 'GitLab', 'Bitbucket', 'Bioconductor', or plain 'subversion' or 'git' repositories.
 -   **`scales`**: Graphical scales map data to aesthetics, and provide methods for automatically determining breaks and labels for axes and legends.
@@ -29,7 +29,7 @@ Whereas programs like Stata, SPSS, etc come with a full suite of built in functi
 -   **`datapasta`**: RStudio addins and R functions that make copy-pasting vectors and tables to text painless.
 -   **`quickview`**: RStudio addin to quickly inspect data in a View tab or open them with default CSV/text editor software.
 
-*OHA/SI Packages*
+## *OHA/SI Packages*
 
 -   **`glitr`**: Helps create and export ggplot2 charts in the style used by the GH OHA SI team. Includes multiple styles and themes to tweak plots to user needs. Sample testing data also available.
 -   **`glamr`**: Provides a series of base functions useful to the GH OHA SI team. This includes project setup, pulling from DATIM, and key functions for working with the MSD.
@@ -59,7 +59,7 @@ remotes::install_github("USAID-OHA-SI/gagglr")
 remotes::install_github("USAID-OHA-SI/tameDP")
 ```
 
-#### Additional Resources
+## Additional Resources
 
 -   [The Tidyverse Packages](https://www.tidyverse.org/)
 -   [Posit Cheatsheets](https://posit.co/resources/cheatsheets/)

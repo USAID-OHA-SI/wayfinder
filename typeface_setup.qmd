@@ -3,7 +3,7 @@ title: "Installing Source Sans Pro Typeface"
 format: html
 ---
 
-#### Installing Source Sans Pro
+## Installing Source Sans Pro
 
 To create standard visualizations across our SI team, we rely on one of USAID's alternate fonts, [Sans Source Pro](https://fonts.google.com/specimen/Source+Sans+Pro). This typeface is not only not native to R, nor is it a standard to Windows, but is an open source typeface available from Google Fonts.
 
@@ -15,7 +15,7 @@ To install the font on your GFE, you can find it in Software Center (Start \> Mi
 
 To install it on your computer, navigate to the typeface on [Google Fonts](https://fonts.google.com/specimen/Source+Sans+Pro) and click the "Download family". After the folder finishes downloading, unzip it.
 
-#### Accessing Fonts in R
+## Accessing Fonts in R
 
 To use non-native fonts in R, you must run a program called `extrafonts`. You will need to run the following code below to install all the fonts on your computer (if desired) and the one you just downloaded/added. You will only need to import fonts only once on your machine. However, to use these fonts with any plotting in R, you will need to load the `extrafont` as with any other package.
 
@@ -40,7 +40,7 @@ fonts()
 
 ![](images/typeface_setup-typeface_installed.png){fig-alt="Output in R Console showing Source Sans Pro family installed"}
 
-#### Additional Resources
+## Additional Resources
 
 -   [USAID Graphic Standards Manual](https://www.usaid.gov/branding/gsm)
 -   [Google Fonts: Sans Source Pro](https://fonts.google.com/specimen/Source+Sans+Pro)
