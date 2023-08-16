@@ -2,17 +2,17 @@
 title: "Installing git & git client"
 ---
 
- 
 GitHub serves as a platform for hosting code, facilitating version control, and enabling collaborative work. It empowers you and your team to collaborate on projects seamlessly, regardless of your physical location. To begin using Git and GitHub, a series of essential steps must be followed to set up and initialize the Git environment:
 
 ## Register a GitHub account
 
-This can be done at the GitHub website where you can sign up for an account for free. While you can use your USAID email, you might want to consider using a personal email to maintain access to your work should you leave USAID. Once that is created, you will need to be added to the “USAID-OHA-SI” organization and appropriate teams, which will be further outlined in _[insert chapter name]___. 
+This can be done at the GitHub website where you can sign up for an account for free. While you can use your USAID email, you might want to consider using a personal email to maintain access to your work should you leave USAID. Once that is created, you will need to be added to the "USAID-OHA-SI" organization and appropriate teams, which will be further outlined in *\[insert chapter name\]*\_\_.
 
-## Install or upgrade R and RStudio 
-Assuming that you’ve installed R and R Studio as outlined ___, it is best to make sure that your installation is upgraded to the most current version. This ensures that you have all of the latest functionality and resources. 
+## Install or upgrade R and RStudio
 
-To make sure your R installation is current, you can check in the “Console”:
+Assuming that you've installed R and R Studio as outlined \_\_\_, it is best to make sure that your installation is upgraded to the most current version. This ensures that you have all of the latest functionality and resources.
+
+To make sure your R installation is current, you can check in the "Console":
 
 ```{r}
 # Check what version of R & Rstudio you are using. Try to use the most recent versions.

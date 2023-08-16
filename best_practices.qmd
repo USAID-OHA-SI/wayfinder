@@ -1,0 +1,85 @@
+---
+title: "Best practices on writing a script"
+---
+
+One of the big upsides of scripting is you have instance documentation of what was one. If we can follow similar practices of commenting and organizing our work, we will make it easier for others and our future selves to more easily understand what is going on in your script.
+
+## Organizing your R scripts
+
+R Scripts read just like documents do. We have lines of code that R reads top-down and executes, with specific steps built off of what was done previously.
+
+We can organize our scripts with a similar flow to organizing a document, to clean up the script visually and help you and others better understand what each part of the script is used for. We can utilize comments to add headers into our script for organization.
+
+While there is no one right way to organize a script, here is an example of how we tend to set up our scripts within OHA/SI. Check out the [Storing Snippets Section] to see how you can easily add this to beginning of each of your scripts. 
+
+
+  - **Introduction**: name of author, purpose of script, date, reference id, notes
+  - **Load Dependencies and Libraries**
+  - **Define global options or functions**: set up global variables as well (variables you want to call on throughout the script)
+  - **Import Data**
+  - **Data Cleaning**
+  - **Analysis/Visualization**
+  - **Export**
+
+```{r}
+#| eval: false
+
+# AUTHOR:   S. Powers | USAID
+# PURPOSE:  Set up training script
+# REF ID:   c2e621bd 
+# LICENSE:  MIT
+# DATE:     2022-09-14
+# UPDATED: 
+
+# DEPENDENCIES ------------------------------------------------------------
+  
+# LOAD PACKAGES ------------------------------------------------------------
+
+  library(glamr)
+  library(tidyverse)
+  
+
+# GLOBAL VARIABLES --------------------------------------------------------
+    
+  #Grab metadata
+  msd_source <- source_info(file_path)
+  
+  ref_id <- "c2e621bd"
+
+# IMPORT ------------------------------------------------------------------
+  
+  #IMPORT MSD
+  si_path() %>% 
+    return_latest() %>% 
+    read_msd() %>% 
+    reshape_msd(clean = T)
+  
+
+# MUNGE -------------------------------------------------------------------
+  
+# VIZ ---------------------------------------------------------------------
+  
+# SPIN DOWN ---------------------------------------------------------------
+
+```
+
+You’ll notice a `ref_id` being stored in the code chunk above. Our team utilizes reference ids in our R scripts to improve our ability to track code to specific analytic products. These reference ids are stored in captions at the bottom of any visualizations or outputs that are produced from our script, so we can more easily reference the corresponding code from our code repositories. They are automatically generated when we create scripts from a snippet template, which uses the following code to generate a unique,  8 character id:
+
+```{r}
+substr(digest::sha1(Sys.time()), start = 1, stop = 8)
+```
+
+## Commenting Your Code
+
+Having a script without inline comments makes it much more challenging to debug or decipher what is going on. It is important to add comments (text that follows a `#`) to chunks of code to provide insights to what is going on. There are a couple of major things to keep in mind. 
+
+First is to not over-commenting, which then makes it more challenging to both develop and maintain, but also to debug problems. Each chunk should be able to be described succinctly; if you require lots of explanation your code chunk likely needs be be broken into smaller segments.
+
+Secondly, when we add comments to a script, by default we typically explain what is going on with our code in plain English. However, it’s much more useful to explain **why**.  Instead of adding an inline comment that you are creating a moving average of `variable x`, it’s better to explain that you are moving average `variable x` to identify outliers based on this calculation. 
+
+## Additional Resources
+
+[Tidyverse Style Guide](https://style.tidyverse.org/)
+[Google’s R Style Guide](https://google.github.io/styleguide/Rguide.html)
+[R4DS Workflows](https://r4ds.had.co.nz/workflow-scripts.html)
+

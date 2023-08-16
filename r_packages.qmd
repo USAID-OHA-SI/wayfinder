@@ -1,0 +1,9 @@
+---
+title: "R Packages"
+---
+
+Intro
+
+Creating a new package
+Setup package structure
+Set up package - while you can create a new package using devtools, it is much easier to use Rstudio. To create a new package use the Create Project command and select the New Directory option. Select R package on the pop-up screen. 

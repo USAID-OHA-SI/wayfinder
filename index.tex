@@ -214,7 +214,7 @@ Karishma Srikanth}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, interior hidden, frame hidden, sharp corners, breakable, boxrule=0pt, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, frame hidden, breakable, enhanced]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -287,7 +287,7 @@ local machines
 
 TO DO
 
-\bookmarksetup{startatroot}
+\part{Tools and configurations}
 
 \hypertarget{installing-r-rstudio-rtools}{%
 \chapter{Installing R, RStudio,
@@ -484,8 +484,6 @@ to SI Snippets}
   - 0 Software and Account Setup: Setting up Rtools - Aaron Chafetz}
 \end{itemize}
 
-\bookmarksetup{startatroot}
-
 \hypertarget{installing-source-sans-pro-typeface}{%
 \chapter{Installing Source Sans Pro
 Typeface}\label{installing-source-sans-pro-typeface}}
@@ -577,8 +575,6 @@ fonts()
   \href{https://usaid-oha-si.github.io/glitr/}{glitr package}
 \end{itemize}
 
-\bookmarksetup{startatroot}
-
 \hypertarget{installing-git-git-client}{%
 \chapter{Installing git \& git client}\label{installing-git-git-client}}
 
@@ -625,8 +621,6 @@ To make sure your R installation is current, you can check in the
 \CommentTok{\#rstudioapi::getVersion()}
 \end{Highlighting}
 \end{Shaded}
-
-\bookmarksetup{startatroot}
 
 \hypertarget{setting-up-a-project}{%
 \chapter{Setting up a project}\label{setting-up-a-project}}
@@ -686,8 +680,6 @@ project. It will allow create the following files:
 \textbf{Note}: If your RStudio is already opened from an existing
 project, you may want to check the \texttt{Open\ in\ a\ new\ session}
 checkbox to open the project in a new session.
-
-\bookmarksetup{startatroot}
 
 \hypertarget{installing-our-base-set-of-packages}{%
 \chapter{Installing our base set of
@@ -873,105 +865,6 @@ remotes::install_github("USAID-OHA-SI/tameDP")
 \item
   \href{https://usaid-oha-si.github.io/tools/}{OHA Packages}
 \end{itemize}
-
-\bookmarksetup{startatroot}
-
-\hypertarget{storing-and-accessing-pepfar-data}{%
-\chapter{Storing and accessing PEPFAR
-data}\label{storing-and-accessing-pepfar-data}}
-
-When working on any given project, the general advice is typically to
-store your data in that specific project 's repository. This advice is a
-good best practice, but does not translate well in the PEPFAR space for
-two main reasons: file size and sensitivity. Instead, we recommend
-storing PEPFAR structured datasets in a centralized location on your
-machine outside of the project,
-e.g.~\texttt{C:\textbackslash{}Users\textbackslash{}spower\textbackslash{}Documents\textbackslash{}Data}.
-
-Our work primarily revolves around using PEPFAR structured datasets,
-which are large, cumbersome SQLview output files, e.g.~OUxIM, PSNU,
-PSNUxIM, NAT\_SUBNAT, and FSD. Given this fact, it makes more sense for
-us to store these dataset in a central location on our machines rather
-than duplicating these files in each project. These PEPFAR structured
-datasets are easily accessible for anyone working in PEPFAR, either from
-\href{https://pepfar-panorama.org/}{PEPFAR Panorama} or through the
-\href{https://www.datim.org/}{DATIM Genie}.
-
-The second reason for storing these datasets outside of the project is
-to avoid any risk of posting these non-public data to a public space
-when using version control. While these structured dataset are
-aggregated and not individual patient level data, they are not published
-by PEPFAR to the public and may contain sensitivities when it comes to
-key populations or when using data at the facility level.
-
-For small (and non-PEPFAR structured) datasets, we recommend storing
-these data within the project either in the \texttt{Data} and
-\texttt{Data\_public} folder. Another alternative is storing the data on
-Google Drive in a shared folder and pulling the data down utilizing the
-Google API via the \texttt{googledrive} or \texttt{googlesheets4}
-packages.
-
-\hypertarget{accessing-pepfar-data}{%
-\section{Accessing PEPFAR Data}\label{accessing-pepfar-data}}
-
-PEPFAR maintains a number of different structured datasets across MER,
-EA, Budget, and SIMS. Data are entered into DATIM, the system of record,
-by partners and goes through an approval process that takes about six
-weeks after the quarter ends. In-process data can be accessed through
-DATIM and the \href{https://www.datim.org/}{DATIM Genie}, which will
-export data in the typical structured manner. Otherwise, datasets are
-made available on \href{https://pepfar-panorama.org/}{PEPFAR Panorama}
-for download. PEPFAR data can also be pulled directly from DATIM
-utilizing an API (see the
-\href{https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/introduction.html}{DHIS2
-API documentation} or our
-\href{https://usaid-oha-si.github.io/grabr/}{\texttt{grabr} package}
-
-As mentioned in the last section, we recommend storing these datasets in
-a central location on your computer. This creates a problem from a
-collaboration standpoint, as we can't just point to the ``Data'' folders
-in our project using a relative path; we have to provide a file path
-that only works on one user's machine and not another. To solve this
-dilemma, we use a function in the
-\href{https://usaid-oha-si.github.io/glamr}{\texttt{glamr} package}
-called \texttt{si\_paths()} which access the paths we have stored
-locally to where our PEPFAR structured datasets reside. This way, when
-you pick up a coworker's code, you don't have to change any of the file
-paths, it just works.
-
-Those local paths need to be set once and stored in your
-\texttt{.Rprofile}. To do so, you will run \texttt{glamr::set\_paths()}
-to store all the relevant paths (you can ignore any that aren't relevant
-to you). The below example would be the code I would run in the console
-indicating where my folders are for the MSD, DATIM files and Downloads.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(glamr)}
-\FunctionTok{set\_paths}\NormalTok{(}\AttributeTok{folderpath\_msd =} \StringTok{"\textasciitilde{}/Documents/Data"}\NormalTok{,}
-  \AttributeTok{folderpath\_datim =}  \StringTok{"\textasciitilde{}/Documents/DATIM"}\NormalTok{,}
-  \AttributeTok{folderpath\_downloads =}  \StringTok{"\textasciitilde{}/Downloads"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{additional-resources-3}{%
-\section{Additional Resources}\label{additional-resources-3}}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{https://usaid-oha-si.github.io/glamr/articles/project-workflow.html}{Project
-  Workflow Vignette}
-\item
-  \href{https://usaid-oha-si.github.io/glamr/}{glamr package}
-\item
-  \href{https://usaid-oha-si.github.io/grabr/}{grabr package}
-\item
-  \href{https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/introduction.html}{DHIS2
-  API Documentation}
-\end{itemize}
-
-\bookmarksetup{startatroot}
 
 \hypertarget{credential-management}{%
 \chapter{Credential management}\label{credential-management}}
@@ -1162,7 +1055,590 @@ authenticate for use with Google Drive and Sheets -
 \end{Highlighting}
 \end{Shaded}
 
-\bookmarksetup{startatroot}
+\part{Working with data}
+
+\hypertarget{storing-and-accessing-pepfar-data}{%
+\chapter{Storing and accessing PEPFAR
+data}\label{storing-and-accessing-pepfar-data}}
+
+When working on any given project, the general advice is typically to
+store your data in that specific project 's repository. This advice is a
+good best practice, but does not translate well in the PEPFAR space for
+two main reasons: file size and sensitivity. Instead, we recommend
+storing PEPFAR structured datasets in a centralized location on your
+machine outside of the project,
+e.g.~\texttt{C:\textbackslash{}Users\textbackslash{}spower\textbackslash{}Documents\textbackslash{}Data}.
+
+Our work primarily revolves around using PEPFAR structured datasets,
+which are large, cumbersome SQLview output files, e.g.~OUxIM, PSNU,
+PSNUxIM, NAT\_SUBNAT, and FSD. Given this fact, it makes more sense for
+us to store these dataset in a central location on our machines rather
+than duplicating these files in each project. These PEPFAR structured
+datasets are easily accessible for anyone working in PEPFAR, either from
+\href{https://pepfar-panorama.org/}{PEPFAR Panorama} or through the
+\href{https://www.datim.org/}{DATIM Genie}.
+
+The second reason for storing these datasets outside of the project is
+to avoid any risk of posting these non-public data to a public space
+when using version control. While these structured dataset are
+aggregated and not individual patient level data, they are not published
+by PEPFAR to the public and may contain sensitivities when it comes to
+key populations or when using data at the facility level.
+
+For small (and non-PEPFAR structured) datasets, we recommend storing
+these data within the project either in the \texttt{Data} and
+\texttt{Data\_public} folder. Another alternative is storing the data on
+Google Drive in a shared folder and pulling the data down utilizing the
+Google API via the \texttt{googledrive} or \texttt{googlesheets4}
+packages.
+
+\hypertarget{accessing-pepfar-data}{%
+\section{Accessing PEPFAR Data}\label{accessing-pepfar-data}}
+
+PEPFAR maintains a number of different structured datasets across MER,
+EA, Budget, and SIMS. Data are entered into DATIM, the system of record,
+by partners and goes through an approval process that takes about six
+weeks after the quarter ends. In-process data can be accessed through
+DATIM and the \href{https://www.datim.org/}{DATIM Genie}, which will
+export data in the typical structured manner. Otherwise, datasets are
+made available on \href{https://pepfar-panorama.org/}{PEPFAR Panorama}
+for download. PEPFAR data can also be pulled directly from DATIM
+utilizing an API (see the
+\href{https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/introduction.html}{DHIS2
+API documentation} or our
+\href{https://usaid-oha-si.github.io/grabr/}{\texttt{grabr} package}
+
+As mentioned in the last section, we recommend storing these datasets in
+a central location on your computer. This creates a problem from a
+collaboration standpoint, as we can't just point to the ``Data'' folders
+in our project using a relative path; we have to provide a file path
+that only works on one user's machine and not another. To solve this
+dilemma, we use a function in the
+\href{https://usaid-oha-si.github.io/glamr}{\texttt{glamr} package}
+called \texttt{si\_paths()} which access the paths we have stored
+locally to where our PEPFAR structured datasets reside. This way, when
+you pick up a coworker's code, you don't have to change any of the file
+paths, it just works.
+
+Those local paths need to be set once and stored in your
+\texttt{.Rprofile}. To do so, you will run \texttt{glamr::set\_paths()}
+to store all the relevant paths (you can ignore any that aren't relevant
+to you). The below example would be the code I would run in the console
+indicating where my folders are for the MSD, DATIM files and Downloads.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(glamr)}
+\FunctionTok{set\_paths}\NormalTok{(}\AttributeTok{folderpath\_msd =} \StringTok{"\textasciitilde{}/Documents/Data"}\NormalTok{,}
+  \AttributeTok{folderpath\_datim =}  \StringTok{"\textasciitilde{}/Documents/DATIM"}\NormalTok{,}
+  \AttributeTok{folderpath\_downloads =}  \StringTok{"\textasciitilde{}/Downloads"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{additional-resources-3}{%
+\section{Additional Resources}\label{additional-resources-3}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://usaid-oha-si.github.io/glamr/articles/project-workflow.html}{Project
+  Workflow Vignette}
+\item
+  \href{https://usaid-oha-si.github.io/glamr/}{glamr package}
+\item
+  \href{https://usaid-oha-si.github.io/grabr/}{grabr package}
+\item
+  \href{https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/introduction.html}{DHIS2
+  API Documentation}
+\end{itemize}
+
+\hypertarget{best-practices-on-writing-a-script}{%
+\chapter{Best practices on writing a
+script}\label{best-practices-on-writing-a-script}}
+
+One of the big upsides of scripting is you have instance documentation
+of what was one. If we can follow similar practices of commenting and
+organizing our work, we will make it easier for others and our future
+selves to more easily understand what is going on in your script.
+
+R Scripts read just like documents do. We have lines of code that R
+reads top-down and executes, with specific steps built off of what was
+done previously.
+
+We can organize our scripts with a similar flow to organizing a
+document, to clean up the script visually and help you and others better
+understand what each part of the script is used for. We can utilize
+comments to add headers into our script for organization.
+
+While there is no one right way to organize a script, here is an example
+of how we tend to set up our scripts within OHA/SI. Check out the
+{[}Storing Snippets Section{]} to see how you can easily add this to
+beginning of each of your scripts.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Introduction}: name of author, purpose of script, date,
+  reference id, notes
+\item
+  \textbf{Load Dependencies and Libraries}
+\item
+  \textbf{Define global options or functions}: set up global variables
+  as well (variables you want to call on throughout the script)
+\item
+  \textbf{Import Data}
+\item
+  \textbf{Data Cleaning}
+\item
+  \textbf{Analysis/Visualization}
+\item
+  \textbf{Export}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# AUTHOR:   S. Powers | USAID}
+\CommentTok{\# PURPOSE:  Set up training script}
+\CommentTok{\# REF ID:   c2e621bd }
+\CommentTok{\# LICENSE:  MIT}
+\CommentTok{\# DATE:     2022{-}09{-}14}
+\CommentTok{\# UPDATED: }
+
+\CommentTok{\# DEPENDENCIES {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+  
+\CommentTok{\# LOAD PACKAGES {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+  \FunctionTok{library}\NormalTok{(glamr)}
+  \FunctionTok{library}\NormalTok{(tidyverse)}
+  
+
+\CommentTok{\# GLOBAL VARIABLES {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+    
+  \CommentTok{\#Grab metadata}
+\NormalTok{  msd\_source }\OtherTok{\textless{}{-}} \FunctionTok{source\_info}\NormalTok{(file\_path)}
+  
+\NormalTok{  ref\_id }\OtherTok{\textless{}{-}} \StringTok{"c2e621bd"}
+
+\CommentTok{\# IMPORT {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+  
+  \CommentTok{\#IMPORT MSD}
+  \FunctionTok{si\_path}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{return\_latest}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{read\_msd}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{reshape\_msd}\NormalTok{(}\AttributeTok{clean =}\NormalTok{ T)}
+  
+
+\CommentTok{\# MUNGE {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+  
+\CommentTok{\# VIZ {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+  
+\CommentTok{\# SPIN DOWN {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\end{Highlighting}
+\end{Shaded}
+
+You'll notice a \texttt{ref\_id} being stored in the code chunk above.
+Our team utilizes reference ids in our R scripts to improve our ability
+to track code to specific analytic products. These reference ids are
+stored in captions at the bottom of any visualizations or outputs that
+are produced from our script, so we can more easily reference the
+corresponding code from our code repositories. They are automatically
+generated when we create scripts from a snippet template, which uses the
+following code to generate a unique, 8 character id:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{substr}\NormalTok{(digest}\SpecialCharTok{::}\FunctionTok{sha1}\NormalTok{(}\FunctionTok{Sys.time}\NormalTok{()), }\AttributeTok{start =} \DecValTok{1}\NormalTok{, }\AttributeTok{stop =} \DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "a3791dc2"
+\end{verbatim}
+
+\hypertarget{commenting-your-code}{%
+\section{Commenting Your Code}\label{commenting-your-code}}
+
+Having a script without inline comments makes it much more challenging
+to debug or decipher what is going on. It is important to add comments
+(text that follows a \texttt{\#}) to chunks of code to provide insights
+to what is going on. There are a couple of major things to keep in mind.
+
+First is to not over-commenting, which then makes it more challenging to
+both develop and maintain, but also to debug problems. Each chunk should
+be able to be described succinctly; if you require lots of explanation
+your code chunk likely needs be be broken into smaller segments.
+
+Secondly, when we add comments to a script, by default we typically
+explain what is going on with our code in plain English. However, it's
+much more useful to explain \textbf{why}. Instead of adding an inline
+comment that you are creating a moving average of \texttt{variable\ x},
+it's better to explain that you are moving average \texttt{variable\ x}
+to identify outliers based on this calculation.
+
+\hypertarget{additional-resources-4}{%
+\section{Additional Resources}\label{additional-resources-4}}
+
+\href{https://style.tidyverse.org/}{Tidyverse Style Guide}
+\href{https://google.github.io/styleguide/Rguide.html}{Google's R Style
+Guide} \href{https://r4ds.had.co.nz/workflow-scripts.html}{R4DS
+Workflows}
+
+\part{Resources \& Help}
+
+\hypertarget{using-our-github-organization}{%
+\chapter{Using our GitHub
+organization}\label{using-our-github-organization}}
+
+In the previous section, we layed out the importance of using version
+control via git. Git is extremely useful working locally on your own
+project, but becoming incredibly valuable when used as a collaboration
+tool; enter
+\href{https://docs.github.com/en/get-started/quickstart/hello-world}{GitHub},
+which ``is a code hosting platform for version control and
+collaboration. It lets you and others work together on projects from
+anywhere.'' While the data we work with cannot be shared, we can take
+advantage of using a ``code hosting platform'' to share our coded work
+across our team (and with our future selves), improving accountability
+and transparency. We have our own organizational account on GitHub,
+\href{https://github.com/USAID-OHA-SI}{USAID-OHA-SI}, which hosts all of
+our code and packages we've developed.
+
+Anyone can view the code on GitHub, but in order to contribute or or
+participate in issues or projects, you will need to be added to the
+\href{https://github.com/USAID-OHA-SI}{USAID-OHA-SI organizational
+account}. You can email one of the organization's ``owners'' - Aaron
+Chafetz (achafetz@usaid.gov), Tim Essam (tessam@usaid.gov), Baboyma
+Kagniniwa (bkagniniwa@usaid.gov), Karishma Srikanth
+(ksrikanth@usaid.gov) - with the email address associated with your
+GitHub account.
+
+\hypertarget{search-the-organizational-space}{%
+\section{Search the organizational
+space}\label{search-the-organizational-space}}
+
+GitHub is a powerful tool because it allows us to collaborate and share
+our code, with others and our future selves. By committing and pushing
+code, you make all of your work searchable. This feature becomes a huge
+asset to others trying to learn or review how previous analyses were
+run. If you go to \href{github.com}{GitHub}, our
+\href{https://github.com/USAID-OHA-SI}{organization page}, or
+\url{github.com/search}, you can search through all our code.
+
+For example, if you were interested in learning about how the
+\texttt{across()} function is used, you could search
+\texttt{org:USAID-OHA-SI\ mutate\ across} to see all the instances of
+how we are applying this function from \texttt{dplyr} or you could
+search for how viral load coverage is calculated,
+\texttt{org:USAID-OHA-SI\ vlc}. GitHub has a great reference document
+for using the
+\href{https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax}{powerful
+search features}.
+
+\hypertarget{how-to-navigate}{%
+\section{How to navigate}\label{how-to-navigate}}
+
+The \href{https://github.com/USAID-OHA-SI}{USAID-OHA-SI organizational
+account} hosts all of our team's R scripts and packages. Currently we
+have over 100 repositories on GitHub, so finding what you are looking
+for can be challenging. One thing to note as well is that we tend to use
+fun names for projects. So instead of calling a project space ``COP
+planning'', we come up with names loosely related, badboys, as referring
+to the Will Smith and Martin Lawrence movie about two cops. It's all our
+bad attempt at humor but it keeps things fun and interesting. Since the
+project names are very loosely related, you can look through the
+Description which will better summarize the project.
+
+Below are a few useful repos to review/reference:
+
+\begin{itemize}
+\tightlist
+\item
+  groundhogday: quarterly scripts that we find ourselves needing to use
+  again and again
+\item
+  catch-22: one off analytic requests
+\item
+  agitprop: high level communications visuals typically produced for the
+  OHA Front Office
+\end{itemize}
+
+In addition to having R projects stored as repositories, we rely on
+GitHub for hosting our R packages so everyone can access them. Each of
+our packages have their own websites, built through \texttt{pkgdown},
+with documentation and are easily navigable from the
+\href{https://usaid-oha-si.github.io/tools/}{SI blog}.
+
+The package pages are great resources, but sometimes you want to see the
+code underlying a function or want to suggest a change via a pull
+request (PR). You can find search through the USAID-OHA-SI account to
+find the repository and find the code you are looking for.
+
+\hypertarget{when-should-i-create-a-new-repo}{%
+\section{When should I create a new
+repo?}\label{when-should-i-create-a-new-repo}}
+
+As you can see, we have lots of repositories that are in existence.
+Repositories are essentially projects, so we can think about creating
+one when our work does not easily fit into another existing repository
+or is going to be large and complex and needs to stand on its own. For
+example, if I review targets for Tanzania from their target setting
+tool, this likely should not be its own repo, but fits either within
+\texttt{badboys} (SI related support for PEPFAR COPs) or
+\texttt{rebooTZ} (OHA SI support for Tanzania).
+
+\hypertarget{how-can-i-contribute}{%
+\section{How can I contribute}\label{how-can-i-contribute}}
+
+Version control and capturing all of our coding on GitHub is important
+for a number reasons:
+
+\begin{itemize}
+\tightlist
+\item
+  Reduces barriers to collaboration
+\item
+  Provides a form of back up
+\item
+  Captures project evolution
+\item
+  Experiment without fear
+\item
+  Commit to transparency
+\end{itemize}
+
+There are a number of ways in which you can contribute to our community
+and global good.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \textbf{Submit an issue} - If you are running into a bug with the
+  code, getting unexpected results, or have a suggestion to make, you
+  can submit a ticket on GitHub. For example, if I have an issue with a
+  date conversion in \texttt{glamr}, I would go to the package repo,
+  github.com/USAID-OHA-SI/glamr and navigate to the ``Issues'' tab at
+  the top of the repo. There I could select the green ``New issue''
+  button, and clearly the descibe the issue/suggestion (check out the
+  Getting Help chapter on writing a reproducible example).
+\item
+  \textbf{Contribute code or a fix to an existing repo/package} - If you
+  have written your own code, you can submit a pull request (PR) on
+  github to get it added to the repo. When working on a shared project,
+  it's best practice to work on your own branch and then submit a PR to
+  get that branch included in the repo. Clone the repo to your RStudio
+  and then create (checkout) a new branch (this can be done through the
+  git IDE tab within RStudio or can be done in the terminal in RStudio,
+  e.g git \texttt{checkout\ -b\ dev\_fix-that-thing}). Once you have
+  made the changes and verified the code runs as intended, you can push
+  your branch. At that stage, you can go to the repo on GitHub, navigate
+  to the ``Pull requests'' tab and then create a new pull request from
+  your dev branch to the main branch. The project or package
+  owner/maintainer will review the PR for inclusion into the repo.
+\item
+  \textbf{Creating a new repo }: If you have a new project that does not
+  exist elsewhere, you can create a new repo. The ``Setting up a
+  project'' chapter details how to do this through RStudio, but you can
+  also setup your project on GitHub. Under our organization, select
+  Repositories and then click the green button the right, ``New
+  Repository''. Front there you will want to add a (witty) repo name
+  with a solid description. The repo should be public, you should add a
+  README, .gitignore, and MIT license.
+\end{enumerate}
+
+From there you can clone the project locally, but selecting the green
+``Code'' button, copying the HTTPS url and setting up a version control
+project in RStudio.
+
+\hypertarget{getting-helpsetting-up-a-reprex}{%
+\chapter{Getting help/setting up a
+reprex}\label{getting-helpsetting-up-a-reprex}}
+
+We are working in a very collaborative environment and benefit from
+being able to troubleshoot errors with our colleagues. Often we receive
+partial screenshots or large code chunks which makes it challenging to
+identify the root of the problem. A better route and a best practice is
+to develop a \textbf{repr}esentative \textbf{ex}ample, or reprex. The
+Posit team created and maintains the
+\href{reprex.tidyverse.org/index.html}{\texttt{reprex} package} as part
+of the \texttt{tidyverse}. You can install it the way you would any
+other package - \texttt{install.packages(“reprex”)}.
+
+The idea of a reprex is to remove all the superfluous information to
+keep just a minimal set of code and data that others can run. Here are
+some great qualities of a reprex from
+\href{https://data.library.virginia.edu/ask-better-code-questions-and-get-better-answers-with-reprex/}{Jacob
+Goldstiend-Greenwood} - self-contained: everything needed to recreate
+the issue at hand should be contained in the reprex - minimal: use small
+and/or built-in data (e.g., mtcars), and strip away extraneous code -
+runnable: a simple copy-paste should be all that's needed to run the
+reprex, and running it shouldn't generate errors \emph{except for those
+that the reprex is intended to exemplify} optional: don't force people
+to run the code in order to understand the issue; include the relevant
+output/errors as part of the reprex (in a way that doesn't disrupt the
+code's runnability) reproducible: use seeds for random processes
+nonintrusive: don't mess with other people's settings and computer
+environments (but if you do, {[}a{]} be obvious about it and {[}b{]} put
+things back the way they were)
+
+Rather than providing a screenshot or a lengthy set of code, we want to
+provide others with an example likely with a small, dummy dataset of
+only the code we are having issue with. This allows someone else to
+re-run your code and hopefully see exactly what you are seeing and then
+can help debug. The process of boiling down your problem into a
+reproducible example more often than not helps you identify the source
+of the problem on your own.
+
+\begin{quote}
+``Writing a good reprex can seem like a hassle but if the asker can't be
+bothered, why should the answerer?'' -
+\href{https://speakerdeck.com/jennybc/reprex-help-me-help-you?slide=21}{Jenny
+Bryan}
+\end{quote}
+
+With the \texttt{reprex} package installed, you are ready to create a
+representative example, using the qualities from above. You will want to
+take advantage of packages like \texttt{tibble} and \texttt{datapasta}
+for the creation of the example. You can use build in datasets
+(\texttt{data()}) or build your own replying on functions like
+\texttt{runif()}, \texttt{sample()}, \texttt{setseed()}, and
+\texttt{expand\_grid()}. Once you write you code, you can copy your code
+(making sure to include the loading of the libraries) and then run
+\texttt{reprex::reprex()} to render a output containing the code,
+outputs, and error messages.
+
+Let's look at an example. In the code I'm working with, I am struggling
+to parse the indicator name out of a complex concatenated string of
+text. The indicator is always the first word before the first period.
+Rather than providing the full dataset or the full chunk of code I'm
+working with, I want to just pull a few examples.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr, }\AttributeTok{warn.conflicts =} \ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(tibble)}
+\FunctionTok{library}\NormalTok{(stringr)}
+
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{42}\NormalTok{)}
+\NormalTok{datapackr}\SpecialCharTok{::}\NormalTok{cop23\_data\_pack\_schema }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{as\_tibble}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(dataset }\SpecialCharTok{==} \StringTok{"mer"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{slice\_sample}\NormalTok{(}\AttributeTok{n =} \DecValTok{10}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{pull}\NormalTok{(indicator\_code) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  datapasta}\SpecialCharTok{::}\FunctionTok{vector\_paste}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+In the code above, I have set a seed so that I (or someone else can
+replicate this in the future to get the same sample of names from the
+larger list. I am pulling the string from a schema file which is in
+package I don't really need anyone else to install (since it has a ton
+of dependencies; all I really need is the string to work with. At the
+end, I have also used a \texttt{datapasta} function which immediately
+pastes the vector into my script and I don't have to then worry about
+reruning the code again.
+
+I can then include that output in the reprex example in my code chunk
+that I want to get help with.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr, }\AttributeTok{warn.conflicts =} \ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(tibble)}
+\FunctionTok{library}\NormalTok{(stringr)}
+ 
+\NormalTok{ind\_samp }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"PMTCT\_STAT.N.KnownPos.T2"}\NormalTok{, }\StringTok{"KP\_PREV.T2"}\NormalTok{, }\StringTok{"GEND\_GBV.PE.T"}\NormalTok{, }\StringTok{"TB\_PREV.N.New.T2"}\NormalTok{, }\StringTok{"OVC\_SERV.DREAMS.T"}\NormalTok{, }\StringTok{"HTS\_TST.STI.Pos.T"}\NormalTok{, }\StringTok{"KP\_MAT.T"}\NormalTok{, }\StringTok{"HTS\_RECENT.T"}\NormalTok{, }\StringTok{"HTS\_RECENT.T2"}\NormalTok{, }\StringTok{"TX\_PVLS.D.KP.T"}\NormalTok{)}
+
+\FunctionTok{tibble}\NormalTok{(}\AttributeTok{indicator\_code =}\NormalTok{ ind\_samp) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{indicator =} \FunctionTok{str\_extract}\NormalTok{(indicator\_code, }\StringTok{"[\^{}}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{.]+"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+With a limited set of observations and only code that is relevant to the
+problem I'm facing, I can now generate the reprex. To do so, I will
+highlight the full code chunk including the libraries above and the copy
+it. After that, I can run the following code in my console and it will
+generate the output below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr, }\AttributeTok{warn.conflicts =} \ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(tibble)}
+\FunctionTok{library}\NormalTok{(stringr)}
+
+\NormalTok{ind\_samp }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"PMTCT\_STAT.N.KnownPos.T2"}\NormalTok{, }\StringTok{"KP\_PREV.T2"}\NormalTok{, }\StringTok{"GEND\_GBV.PE.T"}\NormalTok{, }\StringTok{"TB\_PREV.N.New.T2"}\NormalTok{, }\StringTok{"OVC\_SERV.DREAMS.T"}\NormalTok{, }\StringTok{"HTS\_TST.STI.Pos.T"}\NormalTok{, }\StringTok{"KP\_MAT.T"}\NormalTok{, }\StringTok{"HTS\_RECENT.T"}\NormalTok{, }\StringTok{"HTS\_RECENT.T2"}\NormalTok{, }\StringTok{"TX\_PVLS.D.KP.T"}\NormalTok{)}
+\FunctionTok{tibble}\NormalTok{(}\AttributeTok{indicator\_code =}\NormalTok{ ind\_samp) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{indicator =} \FunctionTok{str\_extract}\NormalTok{(indicator\_code, }\StringTok{"\^{}.*}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{."}\NormalTok{))}
+\CommentTok{\#\textgreater{}    indicator\_code           indicator             }
+\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{}                    \textless{}chr\textgreater{}                 }
+\CommentTok{\#\textgreater{}  1 PMTCT\_STAT.N.KnownPos.T2 PMTCT\_STAT.N.KnownPos.}
+\CommentTok{\#\textgreater{}  2 KP\_PREV.T2               KP\_PREV.              }
+\CommentTok{\#\textgreater{}  3 GEND\_GBV.PE.T            GEND\_GBV.PE.          }
+\CommentTok{\#\textgreater{}  4 TB\_PREV.N.New.T2         TB\_PREV.N.New.        }
+\CommentTok{\#\textgreater{}  5 OVC\_SERV.DREAMS.T        OVC\_SERV.DREAMS.      }
+\CommentTok{\#\textgreater{}  6 HTS\_TST.STI.Pos.T        HTS\_TST.STI.Pos.      }
+\CommentTok{\#\textgreater{}  7 KP\_MAT.T                 KP\_MAT.               }
+\CommentTok{\#\textgreater{}  8 HTS\_RECENT.T             HTS\_RECENT.           }
+\CommentTok{\#\textgreater{}  9 HTS\_RECENT.T2            HTS\_RECENT.           }
+\CommentTok{\#\textgreater{} 10 TX\_PVLS.D.KP.T           TX\_PVLS.D.KP.}
+\end{Highlighting}
+\end{Shaded}
+
+The \texttt{reprex} output has everything I need to now share this with
+others - my code that is minimal and self-contained, you can see the
+code I ran and the output (no errors here). I can now ask my colleagues
+for help with my regex expression and why I am getting
+``PMTCT\_STAT.N.KnownPos.'' for example in the first line when I just
+want ``PMTCT\_STAT''.
+
+Creating a reprex takes some getting used to, but the more you do it,
+the easier it is to create on the fly when you run into an error. And as
+mention before, the process of creating the reprex often results in you
+discovering the solution to your problem on your own.
+
+\hypertarget{additional-resources-5}{%
+\section{Additional Resources}\label{additional-resources-5}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://data.library.virginia.edu/ask-better-code-questions-and-get-better-answers-with-reprex/}{Ask
+  Better Code Questions (and Get Better Answers) With Reprex}
+\item
+  \href{https://reprex.tidyverse.org/index.html}{reprex package}
+\item
+  \href{https://www.youtube.com/watch?v=5gqksthQ0cM}{Help Me Help You:
+  Creating reproducible examples \textbar{} RStudio (2018)}
+\item
+  \href{https://www.jessemaegan.com/blog/so-you-ve-been-asked-to-make-a-reprex/}{So
+  you've been asked to make a reprex}
+\item
+  \href{https://community.rstudio.com/t/faq-whats-a-reproducible-example-reprex-and-how-do-i-create-one/5219}{FAQ:
+  What's a reproducible example (\texttt{reprex}) and how do I create
+  one?}
+\end{itemize}
+
+\part{Documentation}
+
+\hypertarget{r-packages}{%
+\chapter{R Packages}\label{r-packages}}
+
+Intro
+
+Creating a new package Setup package structure Set up package - while
+you can create a new package using devtools, it is much easier to use
+Rstudio. To create a new package use the Create Project command and
+select the New Directory option. Select R package on the pop-up screen.
+
+\hypertarget{creating-a-website-and-vignettes-for-a-package}{%
+\chapter{Creating a Website and Vignettes for a
+Package}\label{creating-a-website-and-vignettes-for-a-package}}
+
+Vignettes are great features of R packages that introduce the user to
+the package's intended use and functionality. As you build a series of
+vignettes for package users, you can organize them into a website using
+the \href{https://pkgdown.r-lib.org/}{pkgdown} package.
+
+\part{Others}
 
 \hypertarget{references}{%
 \chapter*{References}\label{references}}
