@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "R guide for Strategic Information Advisors"
@@ -10,14 +11,34 @@ book:
     - intro.qmd
     - summary.qmd
     - background.qmd
-    - r_setup.qmd
-    - typeface_setup.qmd
-    - git_setup.qmd
-    - r_project_setup.qmd
-    - base_packages.qmd
-    - access_store_data.qmd
-    - creds_mgmt.qmd
-    - references.qmd
+    - part: "Tools and configurations"
+      chapters: 
+        - r_setup.qmd
+        - typeface_setup.qmd
+        - git_setup.qmd
+        - r_project_setup.qmd
+        - base_packages.qmd
+        - creds_mgmt.qmd
+        
+    - part: "Working with data"
+      chapters:
+        - access_store_data.qmd
+        - best_practices.qmd
+        
+    - part: "Resources & Help"
+      chapters:
+        - using_github.qmd
+        - getting_help.qmd
+        
+    - part: "Documentation"
+      chapters:
+        - r_packages.qmd
+        - vignettes.qmd
+        
+    - part: "Others"
+      chapters:
+        - references.qmd
+        
   page-navigation: true
 
 bibliography: references.bib

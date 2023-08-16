@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R guide for Strategic Information Advisors - 6&nbsp; Installing git &amp; git client</title>
+<title>R guide for Strategic Information Advisors - 13&nbsp; Getting help/setting up a reprex</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,8 +93,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./r_project_setup.html" rel="next">
-<link href="./typeface_setup.html" rel="prev">
+<link href="./r_packages.html" rel="next">
+<link href="./using_github.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -133,7 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing git &amp; git client</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Getting help/setting up a reprex</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -196,7 +196,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./git_setup.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing git &amp; git client</span></a>
+  <a href="./git_setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing git &amp; git client</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -251,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./getting_help.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Getting help/setting up a reprex</span></a>
+  <a href="./getting_help.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Getting help/setting up a reprex</span></a>
   </div>
 </li>
       </ul>
@@ -300,8 +300,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#register-a-github-account" id="toc-register-a-github-account" class="nav-link active" data-scroll-target="#register-a-github-account"><span class="toc-section-number">6.1</span>  Register a GitHub account</a></li>
-  <li><a href="#install-or-upgrade-r-and-rstudio" id="toc-install-or-upgrade-r-and-rstudio" class="nav-link" data-scroll-target="#install-or-upgrade-r-and-rstudio"><span class="toc-section-number">6.2</span>  Install or upgrade R and RStudio</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link active" data-scroll-target="#additional-resources"><span class="toc-section-number">13.1</span>  Additional Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -310,7 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing git &amp; git client</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Getting help/setting up a reprex</span></h1>
 </div>
 
 
@@ -325,27 +324,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>GitHub serves as a platform for hosting code, facilitating version control, and enabling collaborative work. It empowers you and your team to collaborate on projects seamlessly, regardless of your physical location. To begin using Git and GitHub, a series of essential steps must be followed to set up and initialize the Git environment:</p>
-<section id="register-a-github-account" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="register-a-github-account"><span class="header-section-number">6.1</span> Register a GitHub account</h2>
-<p>This can be done at the GitHub website where you can sign up for an account for free. While you can use your USAID email, you might want to consider using a personal email to maintain access to your work should you leave USAID. Once that is created, you will need to be added to the “USAID-OHA-SI” organization and appropriate teams, which will be further outlined in <em>[insert chapter name]</em>__.</p>
-</section>
-<section id="install-or-upgrade-r-and-rstudio" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="install-or-upgrade-r-and-rstudio"><span class="header-section-number">6.2</span> Install or upgrade R and RStudio</h2>
-<p>Assuming that you’ve installed R and R Studio as outlined ___, it is best to make sure that your installation is upgraded to the most current version. This ensures that you have all of the latest functionality and resources.</p>
-<p>To make sure your R installation is current, you can check in the “Console”:</p>
+<p>We are working in a very collaborative environment and benefit from being able to troubleshoot errors with our colleagues. Often we receive partial screenshots or large code chunks which makes it challenging to identify the root of the problem. A better route and a best practice is to develop a <strong>repr</strong>esentative <strong>ex</strong>ample, or reprex. The Posit team created and maintains the <a href="reprex.tidyverse.org/index.html"><code>reprex</code> package</a> as part of the <code>tidyverse</code>. You can install it the way you would any other package - <code>install.packages(“reprex”)</code>.</p>
+<p>The idea of a reprex is to remove all the superfluous information to keep just a minimal set of code and data that others can run. Here are some great qualities of a reprex from <a href="https://data.library.virginia.edu/ask-better-code-questions-and-get-better-answers-with-reprex/">Jacob Goldstiend-Greenwood</a> - self-contained: everything needed to recreate the issue at hand should be contained in the reprex - minimal: use small and/or built-in data (e.g., mtcars), and strip away extraneous code - runnable: a simple copy-paste should be all that’s needed to run the reprex, and running it shouldn’t generate errors <em>except for those that the reprex is intended to exemplify</em> optional: don’t force people to run the code in order to understand the issue; include the relevant output/errors as part of the reprex (in a way that doesn’t disrupt the code’s runnability) reproducible: use seeds for random processes nonintrusive: don’t mess with other people’s settings and computer environments (but if you do, [a] be obvious about it and [b] put things back the way they were)</p>
+<p>Rather than providing a screenshot or a lengthy set of code, we want to provide others with an example likely with a small, dummy dataset of only the code we are having issue with. This allows someone else to re-run your code and hopefully see exactly what you are seeing and then can help debug. The process of boiling down your problem into a reproducible example more often than not helps you identify the source of the problem on your own.</p>
+<blockquote class="blockquote">
+<p>“Writing a good reprex can seem like a hassle but if the asker can’t be bothered, why should the answerer?” - <a href="https://speakerdeck.com/jennybc/reprex-help-me-help-you?slide=21">Jenny Bryan</a></p>
+</blockquote>
+<p>With the <code>reprex</code> package installed, you are ready to create a representative example, using the qualities from above. You will want to take advantage of packages like <code>tibble</code> and <code>datapasta</code> for the creation of the example. You can use build in datasets (<code>data()</code>) or build your own replying on functions like <code>runif()</code>, <code>sample()</code>, <code>setseed()</code>, and <code>expand_grid()</code>. Once you write you code, you can copy your code (making sure to include the loading of the libraries) and then run <code>reprex::reprex()</code> to render a output containing the code, outputs, and error messages.</p>
+<p>Let’s look at an example. In the code I’m working with, I am struggling to parse the indicator name out of a complex concatenated string of text. The indicator is always the first word before the first period. Rather than providing the full dataset or the full chunk of code I’m working with, I want to just pull a few examples.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check what version of R &amp; Rstudio you are using. Try to use the most recent versions.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>R.version.string</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "R version 4.2.2 (2022-10-31 ucrt)"</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>datapackr<span class="sc">::</span>cop23_data_pack_schema <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(dataset <span class="sc">==</span> <span class="st">"mer"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(indicator_code) <span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  datapasta<span class="sc">::</span><span class="fu">vector_paste</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<p>In the code above, I have set a seed so that I (or someone else can replicate this in the future to get the same sample of names from the larger list. I am pulling the string from a schema file which is in package I don’t really need anyone else to install (since it has a ton of dependencies; all I really need is the string to work with. At the end, I have also used a <code>datapasta</code> function which immediately pastes the vector into my script and I don’t have to then worry about reruning the code again.</p>
+<p>I can then include that output in the reprex example in my code chunk that I want to get help with.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#   Check version of R-studio</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Rstudio.Version()</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#rstudioapi::getVersion()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ind_samp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"PMTCT_STAT.N.KnownPos.T2"</span>, <span class="st">"KP_PREV.T2"</span>, <span class="st">"GEND_GBV.PE.T"</span>, <span class="st">"TB_PREV.N.New.T2"</span>, <span class="st">"OVC_SERV.DREAMS.T"</span>, <span class="st">"HTS_TST.STI.Pos.T"</span>, <span class="st">"KP_MAT.T"</span>, <span class="st">"HTS_RECENT.T"</span>, <span class="st">"HTS_RECENT.T2"</span>, <span class="st">"TX_PVLS.D.KP.T"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">indicator_code =</span> ind_samp) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">indicator =</span> <span class="fu">str_extract</span>(indicator_code, <span class="st">"[^</span><span class="sc">\\</span><span class="st">.]+"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>With a limited set of observations and only code that is relevant to the problem I’m facing, I can now generate the reprex. To do so, I will highlight the full code chunk including the libraries above and the copy it. After that, I can run the following code in my console and it will generate the output below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ind_samp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"PMTCT_STAT.N.KnownPos.T2"</span>, <span class="st">"KP_PREV.T2"</span>, <span class="st">"GEND_GBV.PE.T"</span>, <span class="st">"TB_PREV.N.New.T2"</span>, <span class="st">"OVC_SERV.DREAMS.T"</span>, <span class="st">"HTS_TST.STI.Pos.T"</span>, <span class="st">"KP_MAT.T"</span>, <span class="st">"HTS_RECENT.T"</span>, <span class="st">"HTS_RECENT.T2"</span>, <span class="st">"TX_PVLS.D.KP.T"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">indicator_code =</span> ind_samp) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">indicator =</span> <span class="fu">str_extract</span>(indicator_code, <span class="st">"^.*</span><span class="sc">\\</span><span class="st">."</span>))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 10 × 2</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    indicator_code           indicator             </span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                    &lt;chr&gt;                 </span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 PMTCT_STAT.N.KnownPos.T2 PMTCT_STAT.N.KnownPos.</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 KP_PREV.T2               KP_PREV.              </span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 GEND_GBV.PE.T            GEND_GBV.PE.          </span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 TB_PREV.N.New.T2         TB_PREV.N.New.        </span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 OVC_SERV.DREAMS.T        OVC_SERV.DREAMS.      </span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 HTS_TST.STI.Pos.T        HTS_TST.STI.Pos.      </span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 KP_MAT.T                 KP_MAT.               </span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 HTS_RECENT.T             HTS_RECENT.           </span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 HTS_RECENT.T2            HTS_RECENT.           </span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 TX_PVLS.D.KP.T           TX_PVLS.D.KP.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>reprex</code> output has everything I need to now share this with others - my code that is minimal and self-contained, you can see the code I ran and the output (no errors here). I can now ask my colleagues for help with my regex expression and why I am getting “PMTCT_STAT.N.KnownPos.” for example in the first line when I just want “PMTCT_STAT”.</p>
+<p>Creating a reprex takes some getting used to, but the more you do it, the easier it is to create on the fly when you run into an error. And as mention before, the process of creating the reprex often results in you discovering the solution to your problem on your own.</p>
+<section id="additional-resources" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">13.1</span> Additional Resources</h2>
+<ul>
+<li><a href="https://data.library.virginia.edu/ask-better-code-questions-and-get-better-answers-with-reprex/">Ask Better Code Questions (and Get Better Answers) With Reprex</a></li>
+<li><a href="https://reprex.tidyverse.org/index.html">reprex package</a></li>
+<li><a href="https://www.youtube.com/watch?v=5gqksthQ0cM">Help Me Help You: Creating reproducible examples | RStudio (2018)</a></li>
+<li><a href="https://www.jessemaegan.com/blog/so-you-ve-been-asked-to-make-a-reprex/">So you’ve been asked to make a reprex</a></li>
+<li><a href="https://community.rstudio.com/t/faq-whats-a-reproducible-example-reprex-and-how-do-i-create-one/5219">FAQ: What’s a reproducible example (<code>reprex</code>) and how do I create one?</a></li>
+</ul>
 
 
 </section>
@@ -486,13 +531,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./typeface_setup.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installing Source Sans Pro Typeface</span></span>
+      <a href="./using_github.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Using our GitHub organization</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r_project_setup.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Setting up a project</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r_packages.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">R Packages</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
