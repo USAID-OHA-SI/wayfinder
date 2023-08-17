@@ -214,7 +214,7 @@ Karishma Srikanth}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, frame hidden, breakable, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable, sharp corners, interior hidden, frame hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -230,10 +230,34 @@ Karishma Srikanth}
 
 \markboth{Preface}{Preface}
 
-This is a Quarto book.
+Welcome to the first edition of
+\texttt{R\ Guide\ for\ Strategic\ Information\ Advisers}!
 
-To learn more about Quarto books visit
-\url{https://quarto.org/docs/books}.
+This edition is an initial release of the manual in anticipation of the
+PEPFAR/USAID Data Workshop scheduled for later this summer. This manual
+will be used as a supporting material for \texttt{R\ Track} sessions
+during the workshop as well as regular reference document for new and
+current staffing using R as their primary analytics tool.
+
+The main sections of the manual are:
+
+\begin{itemize}
+\tightlist
+\item
+  Guidance on how to install and configure R, RStudio, RTools, base R
+  packages, Fonts and git, as well as structure R Projects to support
+  reproducibility.
+\item
+  Best practices on how to access and work with data, write R scripts.
+\item
+  Resources on how to use GitHub, GitHub Organization, and reprex to
+  speedy assistance.
+\item
+  Documentation on how to develop R Packages and corresponding
+  vignettes, create GitHub Pages, and a personal profile.
+\item
+  Tips and Tricks.
+\end{itemize}
 
 \bookmarksetup{startatroot}
 
@@ -249,7 +273,7 @@ See Chafetz (2023) for additional discussion of literate programming.
 \hypertarget{summary}{%
 \chapter{Summary}\label{summary}}
 
-In summary, this book has no content whatsoever.
+Summary is forth coming ...
 
 \bookmarksetup{startatroot}
 
@@ -1252,7 +1276,7 @@ following code to generate a unique, 8 character id:
 \end{Shaded}
 
 \begin{verbatim}
-[1] "a3791dc2"
+[1] "834b3eef"
 \end{verbatim}
 
 \hypertarget{commenting-your-code}{%
