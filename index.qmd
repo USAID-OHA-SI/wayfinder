@@ -1,6 +1,13 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+Welcome to the first edition of `R Guide for Strategic Information Advisers`!
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This edition is an initial release of the manual in anticipation of the PEPFAR/USAID Data Workshop scheduled for later this summer. This manual will be used as a supporting material for `R Track` sessions during the workshop as well as regular reference document for new and current staffing using R as their primary analytics tool.
 
+The main sections of the manual are:
+
+  - Guidance on how to install and configure R, RStudio, RTools, base R packages, Fonts and git, as well as structure R Projects to support reproducibility.
+  - Best practices on how to access and work with data, write R scripts.
+  - Resources on how to use GitHub, GitHub Organization, and reprex to speedy assistance.
+  - Documentation on how to develop R Packages and corresponding vignettes, create GitHub Pages, and a personal profile.
+  - Tips and Tricks.
