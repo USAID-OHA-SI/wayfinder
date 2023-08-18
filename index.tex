@@ -214,7 +214,7 @@ Karishma Srikanth}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, breakable, interior hidden, enhanced, boxrule=0pt, sharp corners, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, sharp corners, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, enhanced, interior hidden, frame hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -629,16 +629,19 @@ To make sure your R installation is current, you can check in the
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Check what version of R \& Rstudio you are using. Try to use the most recent versions.}
+\CommentTok{\# Check what version of R \& Rstudio you are using. }
+\CommentTok{\# Note: Try to use the most recent versions.}
 \NormalTok{R.version.string}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#   Check version of R{-}studio}
-\CommentTok{\#Rstudio.Version()}
-\CommentTok{\#rstudioapi::getVersion()}
+\CommentTok{\# Check version of R{-}studio}
+\FunctionTok{RStudio.Version}\NormalTok{()}
+
+\CommentTok{\# This will also return the version of R{-}studio}
+\NormalTok{rstudioapi}\SpecialCharTok{::}\FunctionTok{getVersion}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1222,7 +1225,7 @@ beginning of each of your scripts.
 \CommentTok{\# REF ID:   c2e621bd }
 \CommentTok{\# LICENSE:  MIT}
 \CommentTok{\# DATE:     2022{-}09{-}14}
-\CommentTok{\# UPDATED: }
+\CommentTok{\# UPDATED:  2022{-}09{-}14}
 
 \CommentTok{\# DEPENDENCIES {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
   
@@ -1234,9 +1237,16 @@ beginning of each of your scripts.
 
 \CommentTok{\# GLOBAL VARIABLES {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
     
+  \CommentTok{\# Input file}
+\NormalTok{  File\_path }\OtherTok{\textless{}{-}} \FunctionTok{return\_latest}\NormalTok{(}
+    \AttributeTok{folderpath =} \FunctionTok{si\_path}\NormalTok{(}\StringTok{"path\_msd"}\NormalTok{), }
+    \AttributeTok{pattern =} \StringTok{"PSNUxIM"}
+\NormalTok{  )}
+
   \CommentTok{\#Grab metadata}
 \NormalTok{  msd\_source }\OtherTok{\textless{}{-}} \FunctionTok{source\_info}\NormalTok{(file\_path)}
   
+  \CommentTok{\# }
 \NormalTok{  ref\_id }\OtherTok{\textless{}{-}} \StringTok{"c2e621bd"}
 
 \CommentTok{\# IMPORT {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
@@ -1246,7 +1256,6 @@ beginning of each of your scripts.
     \FunctionTok{return\_latest}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
     \FunctionTok{read\_msd}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
     \FunctionTok{reshape\_msd}\NormalTok{(}\AttributeTok{clean =}\NormalTok{ T)}
-  
 
 \CommentTok{\# MUNGE {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
   
@@ -1268,12 +1277,10 @@ following code to generate a unique, 8 character id:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{substr}\NormalTok{(digest}\SpecialCharTok{::}\FunctionTok{sha1}\NormalTok{(}\FunctionTok{Sys.time}\NormalTok{()), }\AttributeTok{start =} \DecValTok{1}\NormalTok{, }\AttributeTok{stop =} \DecValTok{8}\NormalTok{)}
+
+\CommentTok{\# The output will look like the value ref\_id variable above}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-[1] "be06314f"
-\end{verbatim}
 
 \hypertarget{commenting-your-code}{%
 \section{Commenting Your Code}\label{commenting-your-code}}
@@ -1299,15 +1306,25 @@ to identify outliers based on this calculation.
 \section{Additional Resources}\label{additional-resources-4}}
 
 \href{https://style.tidyverse.org/}{Tidyverse Style Guide}
+
 \href{https://google.github.io/styleguide/Rguide.html}{Google's R Style
-Guide} \href{https://r4ds.had.co.nz/workflow-scripts.html}{R4DS
-Workflows}
+Guide}
+
+\href{https://r4ds.had.co.nz/workflow-scripts.html}{R4DS Workflows}
 
 \part{Resources \& Help}
 
-\hypertarget{using-our-github-organization}{%
-\chapter{Using our GitHub
-organization}\label{using-our-github-organization}}
+\hypertarget{version-control}{%
+\chapter{Version Control}\label{version-control}}
+
+Version control is essential to our work for several reasons. For this
+reason we will move this section to a dedicated manual on version
+control and all related tools and processes.
+
+\includegraphics{./images/image36 - version_control - final doc.png}
+
+\hypertarget{using-github-organization}{%
+\chapter{Using GitHub organization}\label{using-github-organization}}
 
 In the previous section, we layed out the importance of using version
 control via git. Git is extremely useful working locally on your own
@@ -1326,11 +1343,12 @@ our code and packages we've developed.
 Anyone can view the code on GitHub, but in order to contribute or or
 participate in issues or projects, you will need to be added to the
 \href{https://github.com/USAID-OHA-SI}{USAID-OHA-SI organizational
-account}. You can email one of the organization's ``owners'' - Aaron
-Chafetz (achafetz@usaid.gov), Tim Essam (tessam@usaid.gov), Baboyma
-Kagniniwa (bkagniniwa@usaid.gov), Karishma Srikanth
-(ksrikanth@usaid.gov) - with the email address associated with your
-GitHub account.
+account}. You can email one of the organization's ``owners'' -
+\href{mailto:achafetz@usaid.gov}{Aaron Chafetz},
+\href{mailto:tessam@usaid.gov}{Tim Essam},
+\href{mailto:bkagniniwa@usaid.gov}{Baboyma Kagniniwa},
+\href{mailto:ksrikanth@usaid.gov}{Karishma Srikanth} - with the email
+address associated with your GitHub account.
 
 \hypertarget{search-the-organizational-space}{%
 \section{Search the organizational
@@ -1354,6 +1372,8 @@ for using the
 \href{https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax}{powerful
 search features}.
 
+\includegraphics{./images/image9 - powerfull search.png}
+
 \hypertarget{how-to-navigate}{%
 \section{How to navigate}\label{how-to-navigate}}
 
@@ -1367,6 +1387,8 @@ to the Will Smith and Martin Lawrence movie about two cops. It's all our
 bad attempt at humor but it keeps things fun and interesting. Since the
 project names are very loosely related, you can look through the
 Description which will better summarize the project.
+
+\includegraphics{./images/image18 - badboys.png}
 
 Below are a few useful repos to review/reference:
 
@@ -1388,10 +1410,14 @@ our packages have their own websites, built through \texttt{pkgdown},
 with documentation and are easily navigable from the
 \href{https://usaid-oha-si.github.io/tools/}{SI blog}.
 
+\includegraphics{./images/image11 - glamr.png}
+
 The package pages are great resources, but sometimes you want to see the
 code underlying a function or want to suggest a change via a pull
 request (PR). You can find search through the USAID-OHA-SI account to
 find the repository and find the code you are looking for.
+
+\includegraphics{./images/image38 - glamr code.png}
 
 \hypertarget{when-should-i-create-a-new-repo}{%
 \section{When should I create a new
@@ -1431,6 +1457,7 @@ and global good.
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
+\tightlist
 \item
   \textbf{Submit an issue} - If you are running into a bug with the
   code, getting unexpected results, or have a suggestion to make, you
@@ -1440,6 +1467,13 @@ and global good.
   the top of the repo. There I could select the green ``New issue''
   button, and clearly the descibe the issue/suggestion (check out the
   Getting Help chapter on writing a reproducible example).
+\end{enumerate}
+
+\includegraphics{./images/image13 - glamr setup.png}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
 \item
   \textbf{Contribute code or a fix to an existing repo/package} - If you
   have written your own code, you can submit a pull request (PR) on
@@ -1455,7 +1489,7 @@ and global good.
   your dev branch to the main branch. The project or package
   owner/maintainer will review the PR for inclusion into the repo.
 \item
-  \textbf{Creating a new repo }: If you have a new project that does not
+  \textbf{Creating a new repo} : If you have a new project that does not
   exist elsewhere, you can create a new repo. The ``Setting up a
   project'' chapter details how to do this through RStudio, but you can
   also setup your project on GitHub. Under our organization, select
@@ -1465,9 +1499,13 @@ and global good.
   README, .gitignore, and MIT license.
 \end{enumerate}
 
+\includegraphics{./images/image33 - new repo.png}
+
 From there you can clone the project locally, but selecting the green
 ``Code'' button, copying the HTTPS url and setting up a version control
 project in RStudio.
+
+\includegraphics{./images/image19 - new repo done.png}
 
 \hypertarget{getting-helpsetting-up-a-reprex}{%
 \chapter{Getting help/setting up a
