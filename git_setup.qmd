@@ -17,14 +17,17 @@ To make sure your R installation is current, you can check in the "Console":
 ```{r}
 #| eval: false
 
-# Check what version of R & Rstudio you are using. Try to use the most recent versions.
+# Check what version of R & Rstudio you are using. 
+# Note: Try to use the most recent versions.
 R.version.string
 ```
 
 ```{r}
 #| eval: false
 
-#   Check version of R-studio
-#Rstudio.Version()
-#rstudioapi::getVersion()
+# Check version of R-studio
+RStudio.Version()
+
+# This will also return the version of R-studio
+rstudioapi::getVersion()
 ```

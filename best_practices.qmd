@@ -10,16 +10,15 @@ R Scripts read just like documents do. We have lines of code that R reads top-do
 
 We can organize our scripts with a similar flow to organizing a document, to clean up the script visually and help you and others better understand what each part of the script is used for. We can utilize comments to add headers into our script for organization.
 
-While there is no one right way to organize a script, here is an example of how we tend to set up our scripts within OHA/SI. Check out the [Storing Snippets Section] to see how you can easily add this to beginning of each of your scripts. 
+While there is no one right way to organize a script, here is an example of how we tend to set up our scripts within OHA/SI. Check out the \[Storing Snippets Section\] to see how you can easily add this to beginning of each of your scripts.
 
-
-  - **Introduction**: name of author, purpose of script, date, reference id, notes
-  - **Load Dependencies and Libraries**
-  - **Define global options or functions**: set up global variables as well (variables you want to call on throughout the script)
-  - **Import Data**
-  - **Data Cleaning**
-  - **Analysis/Visualization**
-  - **Export**
+-   **Introduction**: name of author, purpose of script, date, reference id, notes
+-   **Load Dependencies and Libraries**
+-   **Define global options or functions**: set up global variables as well (variables you want to call on throughout the script)
+-   **Import Data**
+-   **Data Cleaning**
+-   **Analysis/Visualization**
+-   **Export**
 
 ```{r}
 #| eval: false
@@ -29,7 +28,7 @@ While there is no one right way to organize a script, here is an example of how 
 # REF ID:   c2e621bd 
 # LICENSE:  MIT
 # DATE:     2022-09-14
-# UPDATED: 
+# UPDATED:  2022-09-14
 
 # DEPENDENCIES ------------------------------------------------------------
   
@@ -41,9 +40,16 @@ While there is no one right way to organize a script, here is an example of how 
 
 # GLOBAL VARIABLES --------------------------------------------------------
     
+  # Input file
+  File_path <- return_latest(
+    folderpath = si_path("path_msd"), 
+    pattern = "PSNUxIM"
+  )
+
   #Grab metadata
   msd_source <- source_info(file_path)
   
+  # 
   ref_id <- "c2e621bd"
 
 # IMPORT ------------------------------------------------------------------
@@ -53,7 +59,6 @@ While there is no one right way to organize a script, here is an example of how 
     return_latest() %>% 
     read_msd() %>% 
     reshape_msd(clean = T)
-  
 
 # MUNGE -------------------------------------------------------------------
   
@@ -63,23 +68,31 @@ While there is no one right way to organize a script, here is an example of how 
 
 ```
 
-You’ll notice a `ref_id` being stored in the code chunk above. Our team utilizes reference ids in our R scripts to improve our ability to track code to specific analytic products. These reference ids are stored in captions at the bottom of any visualizations or outputs that are produced from our script, so we can more easily reference the corresponding code from our code repositories. They are automatically generated when we create scripts from a snippet template, which uses the following code to generate a unique,  8 character id:
+You'll notice a `ref_id` being stored in the code chunk above. Our team utilizes reference ids in our R scripts to improve our ability to track code to specific analytic products. These reference ids are stored in captions at the bottom of any visualizations or outputs that are produced from our script, so we can more easily reference the corresponding code from our code repositories. They are automatically generated when we create scripts from a snippet template, which uses the following code to generate a unique, 8 character id:
 
 ```{r}
+#| eval: false
+
 substr(digest::sha1(Sys.time()), start = 1, stop = 8)
+
+# The output will look like the value ref_id variable above
 ```
 
 ## Commenting Your Code
 
-Having a script without inline comments makes it much more challenging to debug or decipher what is going on. It is important to add comments (text that follows a `#`) to chunks of code to provide insights to what is going on. There are a couple of major things to keep in mind. 
+Having a script without inline comments makes it much more challenging to debug or decipher what is going on. It is important to add comments (text that follows a `#`) to chunks of code to provide insights to what is going on. There are a couple of major things to keep in mind.
 
 First is to not over-commenting, which then makes it more challenging to both develop and maintain, but also to debug problems. Each chunk should be able to be described succinctly; if you require lots of explanation your code chunk likely needs be be broken into smaller segments.
 
-Secondly, when we add comments to a script, by default we typically explain what is going on with our code in plain English. However, it’s much more useful to explain **why**.  Instead of adding an inline comment that you are creating a moving average of `variable x`, it’s better to explain that you are moving average `variable x` to identify outliers based on this calculation. 
+Secondly, when we add comments to a script, by default we typically explain what is going on with our code in plain English. However, it's much more useful to explain **why**. Instead of adding an inline comment that you are creating a moving average of `variable x`, it's better to explain that you are moving average `variable x` to identify outliers based on this calculation.
 
 ## Additional Resources
 
 [Tidyverse Style Guide](https://style.tidyverse.org/)
-[Google’s R Style Guide](https://google.github.io/styleguide/Rguide.html)
+
+[Google's R Style Guide](https://google.github.io/styleguide/Rguide.html)
+
 [R4DS Workflows](https://r4ds.had.co.nz/workflow-scripts.html)
+
+
 
