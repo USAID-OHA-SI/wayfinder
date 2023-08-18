@@ -1,54 +1,67 @@
 ---
-title: "Using our GitHub organization"
+title: "Using GitHub organization"
 ---
 
-In the previous section, we layed out the importance of using version control via git. Git is extremely useful working locally on your own project, but becoming incredibly valuable when used as a collaboration tool; enter [GitHub](https://docs.github.com/en/get-started/quickstart/hello-world), which “is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.” While the data we work with cannot be shared, we can take advantage of using a “code hosting platform” to share our coded work across our team (and with our future selves), improving accountability and transparency. We have our own organizational account on GitHub, [USAID-OHA-SI](https://github.com/USAID-OHA-SI), which hosts all of our code and packages we’ve developed.
+In the previous section, we layed out the importance of using version control via git. Git is extremely useful working locally on your own project, but becoming incredibly valuable when used as a collaboration tool; enter [GitHub](https://docs.github.com/en/get-started/quickstart/hello-world), which "is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere." While the data we work with cannot be shared, we can take advantage of using a "code hosting platform" to share our coded work across our team (and with our future selves), improving accountability and transparency. We have our own organizational account on GitHub, [USAID-OHA-SI](https://github.com/USAID-OHA-SI), which hosts all of our code and packages we've developed.
 
 ## How to get added?
 
-Anyone can view the code on GitHub, but in order to contribute or or participate in issues or projects, you will need to be added to the [USAID-OHA-SI organizational account](https://github.com/USAID-OHA-SI). You can email one of the organization's “owners” - Aaron Chafetz (achafetz@usaid.gov), Tim Essam (tessam@usaid.gov), Baboyma Kagniniwa (bkagniniwa@usaid.gov), Karishma Srikanth (ksrikanth@usaid.gov) - with the email address associated with your GitHub account.  
+Anyone can view the code on GitHub, but in order to contribute or or participate in issues or projects, you will need to be added to the [USAID-OHA-SI organizational account](https://github.com/USAID-OHA-SI). You can email one of the organization's "owners" - [Aaron Chafetz](mailto:achafetz@usaid.gov), [Tim Essam](mailto:tessam@usaid.gov), [Baboyma Kagniniwa](mailto:bkagniniwa@usaid.gov), [Karishma Srikanth](mailto:ksrikanth@usaid.gov) - with the email address associated with your GitHub account.
 
 ## Search the organizational space
 
-GitHub is a powerful tool because it allows us to collaborate and share our code, with others and our future selves. By committing and pushing code, you make all of your work searchable. This feature becomes a huge asset to others trying to learn or review how previous analyses were run. If you go to [GitHub](github.com), our [organization page](https://github.com/USAID-OHA-SI), or [github.com/search](github.com/search), you can search through all our code. 
+GitHub is a powerful tool because it allows us to collaborate and share our code, with others and our future selves. By committing and pushing code, you make all of your work searchable. This feature becomes a huge asset to others trying to learn or review how previous analyses were run. If you go to [GitHub](github.com), our [organization page](https://github.com/USAID-OHA-SI), or [github.com/search](github.com/search), you can search through all our code.
 
 For example, if you were interested in learning about how the `across()` function is used, you could search `org:USAID-OHA-SI mutate across` to see all the instances of how we are applying this function from `dplyr` or you could search for how viral load coverage is calculated, `org:USAID-OHA-SI vlc`. GitHub has a great reference document for using the [powerful search features](https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax).
 
+![](images/image9 - powerfull search.png)
+
 ## How to navigate
 
-The [USAID-OHA-SI organizational account](https://github.com/USAID-OHA-SI) hosts all of our team’s R scripts and packages. Currently we have over 100 repositories on GitHub, so finding what you are looking for can be challenging. One thing to note as well is that we tend to use fun names for projects. So instead of calling a project space “COP planning”, we come up with names loosely related, badboys, as referring to the Will Smith and Martin Lawrence movie about two cops. It’s all our bad attempt at humor but it keeps things fun and interesting. Since the project names are very loosely related, you can look through the  Description which will better summarize the project. 
+The [USAID-OHA-SI organizational account](https://github.com/USAID-OHA-SI) hosts all of our team's R scripts and packages. Currently we have over 100 repositories on GitHub, so finding what you are looking for can be challenging. One thing to note as well is that we tend to use fun names for projects. So instead of calling a project space "COP planning", we come up with names loosely related, badboys, as referring to the Will Smith and Martin Lawrence movie about two cops. It's all our bad attempt at humor but it keeps things fun and interesting. Since the project names are very loosely related, you can look through the Description which will better summarize the project.
+
+![](images/image18 - badboys.png)
 
 Below are a few useful repos to review/reference:
 
-  - groundhogday: quarterly scripts that we find ourselves needing to use again and again
-  - catch-22: one off analytic requests
-  - agitprop: high level communications visuals typically produced for the OHA Front Office
+-   groundhogday: quarterly scripts that we find ourselves needing to use again and again
+-   catch-22: one off analytic requests
+-   agitprop: high level communications visuals typically produced for the OHA Front Office
 
 In addition to having R projects stored as repositories, we rely on GitHub for hosting our R packages so everyone can access them. Each of our packages have their own websites, built through `pkgdown`, with documentation and are easily navigable from the [SI blog](https://usaid-oha-si.github.io/tools/).
 
+![](images/image11 - glamr.png)
+
 The package pages are great resources, but sometimes you want to see the code underlying a function or want to suggest a change via a pull request (PR). You can find search through the USAID-OHA-SI account to find the repository and find the code you are looking for.
+
+![](images/image38 - glamr code.png)
 
 ## When should I create a new repo?
 
-As you can see, we have lots of repositories that are in existence. Repositories are essentially projects, so we can think about creating one when our work does not easily fit into another existing repository or is going to be large and complex and needs to stand on its own. For example, if I review targets for Tanzania from their target setting tool, this likely should not be its own repo, but fits either within `badboys` (SI related support for PEPFAR COPs) or `rebooTZ` (OHA SI support for Tanzania).  
+As you can see, we have lots of repositories that are in existence. Repositories are essentially projects, so we can think about creating one when our work does not easily fit into another existing repository or is going to be large and complex and needs to stand on its own. For example, if I review targets for Tanzania from their target setting tool, this likely should not be its own repo, but fits either within `badboys` (SI related support for PEPFAR COPs) or `rebooTZ` (OHA SI support for Tanzania).
 
 ## How can I contribute
 
 Version control and capturing all of our coding on GitHub is important for a number reasons:
 
-  - Reduces barriers to collaboration
-  - Provides a form of back up
-  - Captures project evolution
-  - Experiment without fear
-  - Commit to transparency
+-   Reduces barriers to collaboration
+-   Provides a form of back up
+-   Captures project evolution
+-   Experiment without fear
+-   Commit to transparency
 
-There are a number of ways in which you can contribute to our community and global good. 
+There are a number of ways in which you can contribute to our community and global good.
 
-  a. **Submit an issue** -  If you are running into a bug with the code, getting unexpected results, or have a suggestion to make, you can submit a ticket on GitHub. For example, if I have an issue with a date conversion in `glamr`, I would go to the package repo, github.com/USAID-OHA-SI/glamr and navigate to the “Issues” tab at the top of the repo. There I could select the green “New issue” button, and clearly the descibe the issue/suggestion (check out the Getting Help chapter on writing a reproducible example).
+a.  **Submit an issue** - If you are running into a bug with the code, getting unexpected results, or have a suggestion to make, you can submit a ticket on GitHub. For example, if I have an issue with a date conversion in `glamr`, I would go to the package repo, github.com/USAID-OHA-SI/glamr and navigate to the "Issues" tab at the top of the repo. There I could select the green "New issue" button, and clearly the descibe the issue/suggestion (check out the Getting Help chapter on writing a reproducible example).
 
-  b. **Contribute code or a fix to an existing repo/package** - If you have written your own code, you can submit a pull request (PR) on github to get it added to the repo. When working on a shared project, it’s best practice to work on your own branch and then submit a PR to get that branch included in the repo. Clone the repo to your RStudio and then create (checkout) a new branch (this can be done through the git IDE tab within RStudio or can be done in the terminal in RStudio, e.g git `checkout -b dev_fix-that-thing`). Once you have made the changes and verified the code runs as intended, you can push your branch. At that stage, you can go to the repo on GitHub, navigate to the “Pull requests” tab and then create a new pull request from your dev branch to the main branch. The project or package owner/maintainer will review the PR for inclusion into the repo.
+![](images/image13 - glamr setup.png)
 
-  c. **Creating a new repo **:  If you have a new project that does not exist elsewhere, you can create a new repo. The “Setting up a project” chapter details how to do this through RStudio, but you can also setup your project on GitHub. Under our organization, select Repositories and then click the green button the right, “New Repository”. Front there you will want to add a (witty) repo name with a solid description. The repo should be public, you should add a README, .gitignore, and MIT license. 
-  
-From there you can clone the project locally, but  selecting the green “Code” button, copying the HTTPS url and setting up a version control project in RStudio.
+b.  **Contribute code or a fix to an existing repo/package** - If you have written your own code, you can submit a pull request (PR) on github to get it added to the repo. When working on a shared project, it's best practice to work on your own branch and then submit a PR to get that branch included in the repo. Clone the repo to your RStudio and then create (checkout) a new branch (this can be done through the git IDE tab within RStudio or can be done in the terminal in RStudio, e.g git `checkout -b dev_fix-that-thing`). Once you have made the changes and verified the code runs as intended, you can push your branch. At that stage, you can go to the repo on GitHub, navigate to the "Pull requests" tab and then create a new pull request from your dev branch to the main branch. The project or package owner/maintainer will review the PR for inclusion into the repo.
 
+c.  **Creating a new repo** : If you have a new project that does not exist elsewhere, you can create a new repo. The "Setting up a project" chapter details how to do this through RStudio, but you can also setup your project on GitHub. Under our organization, select Repositories and then click the green button the right, "New Repository". Front there you will want to add a (witty) repo name with a solid description. The repo should be public, you should add a README, .gitignore, and MIT license.
+
+![](images/image33 - new repo.png)
+
+From there you can clone the project locally, but selecting the green "Code" button, copying the HTTPS url and setting up a version control project in RStudio.
+
+![](images/image19 - new repo done.png)

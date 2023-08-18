@@ -29,6 +29,7 @@ book:
         
     - part: "Resources & Help"
       chapters:
+        - version_control.qmd
         - using_github.qmd
         - getting_help.qmd
         
