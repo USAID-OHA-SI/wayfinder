@@ -1,0 +1,5 @@
+---
+title: "Creating a Website and Vignettes for a Package"
+---
+
+Vignettes are great features of R packages that introduce the user to the package’s intended use and functionality. As you build a series of vignettes for package users, you can organize them into a website using the [pkgdown](https://pkgdown.r-lib.org/) package.

@@ -1,0 +1,87 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "R guide for Strategic Information Advisors"
+  author: "Lemlem Baraki, Aaron Chafetz, Tim Essam, Baboyma Kagniniwa, Karishma Srikanth"
+  date: "8/01/2023"
+  repo-url: https://github.com/USAID-OHA-SI/Wayfinder
+  repo-actions: [edit, issue]
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - background.qmd
+    - part: "Tools and configurations"
+      chapters: 
+        - r_setup.qmd
+        - typeface_setup.qmd
+        - git_setup.qmd
+        - r_project_setup.qmd
+        - base_packages.qmd
+        - creds_mgmt.qmd
+        
+    - part: "Working with data"
+      chapters:
+        - access_store_data.qmd
+        - best_practices.qmd
+        
+    - part: "Resources & Help"
+      chapters:
+        - version_control.qmd
+        - using_github.qmd
+        - getting_help.qmd
+        
+    - part: "Documentation"
+      chapters:
+        - r_packages.qmd
+        - vignettes.qmd
+        
+    - part: "Others"
+      chapters:
+        - references.qmd
+        
+  page-footer: 
+    center: |
+      Disclaimer: The findings, interpretation, and conclusions expressed herein are those of the authors and do not necessarily reflect the views of the United States Agency for International Development. All errors remain our own.
+  
+  navbar: 
+    background: light
+    logo: "images/si_logo.png"
+    logo-alt: "SI Wayfinder"
+    collapse-below: md
+    title: false
+    search: true
+    pinned: true
+    left: 
+      - text: "Introduction"
+        href: index.qmd
+      - text: "Installations"
+        href: r_setup.qmd
+      - text: "Recommendations"
+        href: access_store_data.qmd
+      - text: "Resources"
+        href: using_github.qmd
+    tools: 
+      - icon: github
+        href: https://github.com/USAID-OHA-SI/Wayfinder
+        text: Wayfinder GitHub Repo
+        
+  page-navigation: true
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    cover-image: images/r_analyst_manual_cover.png
+    page-layout: full
+    css: styles.css
+  pdf:
+    documentclass: scrreprt
+  epub: 
+    cover-image: cover.png
+
+editor: visual
+

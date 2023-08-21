@@ -1,0 +1,9 @@
+---
+title: "Version Control"
+---
+
+## Version Control = importance and utilization
+
+Version control is essential to our work for several reasons. For this reason we will move this section to a dedicated manual on version control and all related tools and processes.
+
+![](images/image36%20-%20version_control%20-%20final%20doc.png)
