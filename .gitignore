@@ -40,7 +40,6 @@ vignettes/*.pdf
 .Renviron
 
 # pkgdown site
-docs/
 _site/
 _book/
 
